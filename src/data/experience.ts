@@ -70,5 +70,5 @@ export const education: Credential[] = [
 
 /** The one-line framing above the timeline. */
 export const experienceLede =
-    "Self-taught engineer who has been the primary technical owner on most of what I've built — from architecture " +
-    "through deployment and the maintenance after it.";
+    "Self-taught software engineer with 5+ years writing code, and the primary technical owner on most of what I've " +
+    "built — from architecture through deployment and the maintenance after it.";
