@@ -1,25 +1,30 @@
 import type { Credential, Job } from "../types";
 
-/* Straight from the résumé. Employment claims are attested by an employer and a
-   résumé rather than by a public artefact, so they get those as their receipt
-   instead of a repository link — see the note in Experience.tsx. */
+/* From the master resume at ~/jobs/profile/master_resume.md. Employment claims
+   are attested by an employer and a resume rather than by a public artefact, so
+   they get those as their receipt — see the note in Experience.tsx.
+
+   The studio is named rather than described. Per the master resume's own
+   framing note: an unnamed "Mobile App Development" entry reads as a euphemism,
+   a named company reads as end-to-end ownership. */
 
 export const jobs: Job[] = [
     {
-        id: "lead-mobile",
-        org: "Mobile App Development",
-        title: "Lead Software Engineer",
+        id: "if-development",
+        org: "IF Development",
+        title: "Founder & Lead Software Engineer",
         start: "January 2026",
         end: "Present",
+        location: "Remote",
         summary:
-            "Building and shipping multi-platform mobile applications for iPhone and iPad as the primary technical owner — " +
-            "design, architecture, platform integration and store submission.",
+            "Founded and operate a solo iOS studio, owning product direction, architecture, implementation and the " +
+            "release process end to end.",
         points: [
-            "Creating applications for multi-platform mobile devices on Apple iOS, including iPhone and iPad.",
-            "Designing mobile UI layouts, front-end graphics and project architectures across multiple applications.",
-            "Integrating mobile functionality including push notifications, in-app purchases and AdMob SDKs via Godot C++ modules and community plugins.",
+            "Built three multi-platform iOS applications for iPhone and iPad, designing the UI layouts, front-end graphics and project architecture for each. App Store submission in progress.",
+            "Integrated push notifications, in-app purchases and AdMob SDKs through custom Godot C++ modules and community plugins.",
+            "Set up the release pipeline end to end — certificates, provisioning profiles, code signing, build automation and App Store Connect submission.",
         ],
-        stack: ["Godot", "GDScript", "C++ modules", "iOS", "iPadOS", "StoreKit", "AdMob"],
+        stack: ["Godot", "C++", "GDScript", "iOS", "StoreKit / IAP", "AdMob", "App Store Connect"],
     },
     {
         id: "lowes-swe",
@@ -32,11 +37,11 @@ export const jobs: Job[] = [
             "Built the Python services and data pipelines behind executive reporting, owning them from architecture " +
             "through deployment and ongoing maintenance.",
         points: [
-            "Designed and implemented scalable Python APIs (Flask, FastAPI) and microservices supporting over 500 internal employees, with emphasis on C-level executive reporting.",
+            "Designed and implemented scalable Python APIs (Flask, FastAPI) and microservices supporting 500+ internal employees, with emphasis on C-level executive reporting.",
             "Owned the architecture and maintenance of ETL pipelines processing roughly 150GB of data monthly, integrating databases into analytical models for React executive dashboards that informed $15M+ in business decisions.",
             "Developed automations around security software for threat detection, asset patching, firewall protocols and compliance reporting.",
         ],
-        stack: ["Python", "Flask", "FastAPI", "React", "ETL", "PostgreSQL", "Microservices"],
+        stack: ["Python", "Flask", "FastAPI", "React", "SQL", "ETL", "Microservices"],
     },
     {
         id: "lowes-msa",
@@ -47,8 +52,8 @@ export const jobs: Job[] = [
         location: "Coralville, IA",
         summary: "Coordinated in-store merchandising teams, and solved a hardware problem nobody had asked me to solve.",
         points: [
-            "Coordinated teams constructing physical marketing displays for branded items and products that directly impacted store revenue.",
-            "3D-printed a pricing sign-adapter outside of normal working hours, letting existing electronic signage be reused across any product display.",
+            "Coordinated teams constructing physical marketing displays for branded products that directly impacted store revenue.",
+            "3D-printed a pricing sign-adapter outside normal working hours, letting existing electronic signage be reused across any product display.",
         ],
     },
 ];
@@ -65,5 +70,5 @@ export const education: Credential[] = [
 
 /** The one-line framing above the timeline. */
 export const experienceLede =
-    "Self-taught engineer with 5+ years leading complex systems from architecture through deployment and ongoing " +
-    "improvement, as the primary technical owner.";
+    "Self-taught engineer who has been the primary technical owner on most of what I've built — from architecture " +
+    "through deployment and the maintenance after it.";

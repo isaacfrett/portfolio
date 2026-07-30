@@ -16,7 +16,7 @@ export function Experience() {
                     <p className="section-note">
                         Employment is attested by an employer rather than a public repository, so the evidence here is the{" "}
                         <a href={profile.resume} target="_blank" rel="noreferrer">
-                            résumé
+                            resume
                         </a>{" "}
                         and{" "}
                         <a href={profile.linkedin} target="_blank" rel="noreferrer">

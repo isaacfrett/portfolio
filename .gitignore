@@ -23,5 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 
-# The résumé is served from public/Isaac_Frett_Resume.pdf; this is the drop copy.
+# The resume is served from public/Isaac_Frett_Resume.pdf; this is the drop copy.
 Isaac_Frett_Software_Engineer.pdf
+
+# Copied from node_modules by `npm run resume`; regenerate rather than commit.
+resume/fonts/

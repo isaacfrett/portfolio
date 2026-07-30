@@ -12,7 +12,7 @@ export function Hero() {
         <section className="hero" id="top">
             <div className="shell hero__inner">
                 <p className="eyebrow hero__eyebrow">
-                    {profile.role} · {profile.location}
+                    {profile.role} · Remote, US
                 </p>
 
                 <h1 className="hero__headline">{profile.headline}</h1>
@@ -59,7 +59,7 @@ export function Hero() {
                         See the work
                     </a>
                     <a className="btn" href={profile.resume} target="_blank" rel="noreferrer">
-                        Download résumé
+                        Download resume
                     </a>
                     <span className="pip hero__availability" data-status="live">
                         {profile.availability}

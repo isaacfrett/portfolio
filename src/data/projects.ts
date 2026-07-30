@@ -4,89 +4,98 @@ import dashResearch from "../assets/quant-research.png";
 import dashHealth from "../assets/quant-health.png";
 
 /* Every figure below is drawn from the project's own public documentation or
-   repository. Nothing here is rounded up. */
+   repository. Nothing here is rounded up.
+
+   Two standing accuracy constraints, carried over from the master resume:
+     · The iOS apps are built and in submission. Never "shipped", "published"
+       or "launched", and never a download, rating or revenue figure.
+     · Statlume's predictive accuracy was never measured. Describe what was
+       built, never how well it performed. */
 
 export const projects: Project[] = [
     {
         id: "quant",
         name: "Quantitative Futures Trading Platform",
         tagline: "An end-to-end research and execution engine built to reject its own bad ideas.",
-        period: "Ongoing",
-        role: "Sole engineer — research, execution, infrastructure, dashboard",
-        status: "private-source",
+        period: "Archived",
+        role: "Sole architect and engineer — research, execution, infrastructure, dashboard",
+        status: "archived",
         tracks: ["ml", "fullstack", "frontend"],
         weight: 0,
         stack: [
             "Python 3.11",
             "LightGBM",
+            "scikit-learn",
             "pandas",
             "NumPy",
             "Parquet / PyArrow",
             "FastAPI",
             "React",
             "TypeScript",
-            "Tailwind",
             "systemd",
             "pytest",
         ],
         summary:
-            "Discovers, validates and deploys machine-learning trading strategies under strict anti-overfitting controls, " +
-            "then runs them live against a broker API with hard risk governance. Models train on liquid CME macro futures " +
-            "and execute on their micro equivalents. The design goal is honesty over optimism: every layer exists to reject " +
-            "strategies that only look good by luck.",
+            "Discovered, validated and deployed machine-learning trading strategies under strict anti-overfitting " +
+            "controls, then ran them against a broker API with hard risk governance. Models trained on liquid CME macro " +
+            "futures — Nasdaq, S&P, gold, crude, silver, copper — and executed on their micro equivalents so positions " +
+            "could be sized precisely. The design goal was honesty over optimism: every layer existed to reject " +
+            "strategies that only looked good by luck. No longer running; the architecture write-up is public and the " +
+            "implementation stays private.",
         highlights: [
             {
                 claim: "700+ engineered features, every one lookahead-safe",
                 detail:
                     "A modular pipeline of 50+ builders spanning volatility, momentum, microstructure, multi-timeframe " +
-                    "context, regime classification and cross-asset spreads. Lookahead safety is a hard invariant — " +
-                    "lookback-only windows, backward-direction merge_asof, and an automated auditor that checks each " +
-                    "feature's first-valid index against the label horizon. Leakage is treated as a release-blocking defect.",
+                    "context, regime classification and cross-asset spreads. Lookahead safety was a hard invariant — " +
+                    "lookback-only windows, backward-direction merge_asof, and an automated auditor that cross-checked " +
+                    "each feature's first-valid index against the label horizon. Leakage was a release-blocking defect.",
             },
             {
                 claim: "Walk-forward validation with purge and embargo",
                 detail:
-                    "Purge gaps of at least the label horizon and embargoes of at least the feature lookback remove the " +
-                    "label-overlap and window leakage that naive cross-validation hides. Folds span the entire available " +
-                    "record so estimates aren't biased toward one regime, and combinatorial purged CV gives " +
+                    "Purge gaps of at least the label horizon and embargoes of at least the feature lookback removed the " +
+                    "label-overlap and window leakage that naive cross-validation hides. Folds spanned the entire " +
+                    "available record so estimates weren't biased toward one regime, and combinatorial purged CV gave " +
                     "distribution-level estimates of out-of-sample performance.",
             },
             {
                 claim: "Two-stage side/meta models with calibrated probabilities",
                 detail:
-                    "A side model decides direction; a meta model decides whether to act at all, learning to suppress the " +
-                    "side model's low-confidence calls. Predicted probabilities are isotonically calibrated before they " +
-                    "reach position sizing, so edge estimates and bet sizes stay on the same scale.",
+                    "A side model predicted direction; a meta model decided whether to act at all, learning to suppress " +
+                    "the side model's low-confidence calls. Predicted probabilities were isotonically calibrated before " +
+                    "they reached position sizing, so edge estimates and bet sizes stayed on the same scale.",
             },
             {
-                claim: "A promotion funnel that rejects most candidates",
+                claim: "A promotion funnel built to reject",
                 detail:
-                    "L1 screens signal quality — information coefficient and its stability, directional skill, fold " +
-                    "coverage, decile spread, degeneracy checks. L2 screens economics — net-of-cost Sharpe, deflated " +
-                    "Sharpe to correct for the number of trials, and probability of backtest overfitting. Commissions and " +
-                    "slippage are netted before any statistic is computed, so the gates judge tradable edge rather than " +
-                    "paper edge.",
+                    "L1 screened signal quality — information coefficient and its stability, directional skill, fold " +
+                    "coverage, decile spread, degeneracy checks. L2 screened economics — net-of-cost Sharpe, deflated " +
+                    "Sharpe to correct for the number of trials, and probability of backtest overfitting. Commissions " +
+                    "and slippage were netted before any statistic was computed, so the gates judged tradable edge " +
+                    "rather than paper edge. Survivors entered a maturity lifecycle rather than going straight to " +
+                    "capital.",
             },
             {
                 claim: "Backtest-to-live parity as a shipping gate",
                 detail:
-                    "Trailing stops, breakeven logic and session flatten must behave identically in simulation and in live " +
-                    "execution, verified by a continuous parity suite. If they diverge, the change doesn't ship.",
+                    "Trailing stops, breakeven logic and session flatten had to behave identically in simulation and in " +
+                    "live execution, verified by a continuous parity suite. If they diverged, the change didn't ship.",
             },
             {
                 claim: "Risk governance with an instant kill switch",
                 detail:
                     "Per-trade risk caps, concurrent-position limits, daily loss limits, trailing max-loss tracking, " +
-                    "correlation-aware exposure control, and automatic halts on drawdown or consecutive-loss thresholds. " +
-                    "A file-based kill switch halts all trading immediately.",
+                    "correlation-aware exposure control, and automatic halts on drawdown or consecutive-loss " +
+                    "thresholds. A file-based kill switch halted all trading immediately.",
             },
             {
                 claim: "Operated by an agent fleet across role-separated servers",
                 detail:
-                    "Research, staging and local nodes run under systemd so heavy training never competes with live " +
-                    "execution. A fleet of focused agents owns data-quality auditing, model diagnosis, gate calibration, " +
-                    "execution-parity checking and incident response, each keeping its concern small and independently " +
-                    "testable while leaving an audit trail of every automated decision.",
+                    "Research, staging and local nodes ran under systemd so heavy training never competed with " +
+                    "execution. A fleet of focused agents owned data-quality auditing, model diagnosis, gate " +
+                    "calibration, execution-parity checking and incident response — each concern small and " +
+                    "independently testable, with an audit trail of every automated decision.",
             },
         ],
         receipts: [
@@ -95,7 +104,8 @@ export const projects: Project[] = [
                 value: "quant-public",
                 href: "https://github.com/isaacfrett/quant-public",
             },
-            { label: "Source", value: "private" },
+            { label: "Implementation", value: "private" },
+            { label: "Status", value: "archived" },
         ],
         shots: [
             {
@@ -114,8 +124,7 @@ export const projects: Project[] = [
                 alt:
                     "System health dashboard showing CPU, memory and disk meters for three servers, plus tables of " +
                     "node agents, research workers and a data collector with uptime and status.",
-                caption:
-                    "System health — live resource and service monitoring across the research, staging and local nodes.",
+                caption: "System health — resource and service monitoring across the research, staging and local nodes.",
             },
         ],
     },
@@ -171,7 +180,7 @@ export const projects: Project[] = [
                 value: "choicebible-public",
                 href: "https://github.com/isaacfrett/choicebible-public",
             },
-            { label: "App Store", value: "in testing" },
+            { label: "App Store", value: "submission in progress" },
         ],
     },
 
@@ -184,7 +193,7 @@ export const projects: Project[] = [
         status: "testing",
         tracks: ["ios", "frontend"],
         weight: 2,
-        stack: ["Godot", "GDScript", "iOS", "iPadOS", "HTML", "CSS"],
+        stack: ["Godot", "GDScript", "C++ modules", "iOS", "iPadOS", "HTML", "CSS"],
         summary:
             "A cosmic match-3 for iPhone and iPad built around a single move: every level hands you one star, and you tap " +
             "it rather than swap it, choosing the shape it breaks into. Three hundred levels, each one measured before it " +
@@ -225,8 +234,68 @@ export const projects: Project[] = [
                 href: "https://isaacfrett.github.io/starsplit/",
             },
             { label: "Site source", value: "starsplit", href: "https://github.com/isaacfrett/starsplit" },
-            { label: "App Store", value: "in testing" },
+            { label: "App Store", value: "submission in progress" },
         ],
+    },
+
+    {
+        id: "statlume",
+        name: "Statlume",
+        tagline: "A multi-sport analytics service with player-prop models on top of it.",
+        period: "2024",
+        role: "Solo — warehouse, ingestion, models, delivery",
+        status: "archived",
+        tracks: ["ml", "fullstack"],
+        weight: 3,
+        stack: [
+            "Python",
+            "Django",
+            "TensorFlow / Keras",
+            "scikit-learn",
+            "MySQL",
+            "SQLAlchemy",
+            "Poetry",
+            "pytest",
+        ],
+        summary:
+            "A statistics and prediction service covering the NBA, NFL and MLB, built over a warehouse of player game " +
+            "logs fed by third-party stats and sportsbook-odds APIs. Each league is its own package with its own CLI, " +
+            "and the whole thing ran as a scheduled weekly job against the warehouse.",
+        highlights: [
+            {
+                claim: "NBA player-prop models against sportsbook lines",
+                detail:
+                    "Points and rebounds models built with TensorFlow/Keras and scikit-learn — RandomForest " +
+                    "classifiers, standardised feature scaling, train/test splits — over rolling recent-form windows. " +
+                    "Predictive accuracy was never formally measured, so nothing is claimed about how well they did.",
+            },
+            {
+                claim: "NFL player clustering for archetype segmentation",
+                detail:
+                    "K-means at k=3 over standardised performance features, grouping players into archetypes rather " +
+                    "than scoring them on a single axis.",
+            },
+            {
+                claim: "A warehouse fed by two kinds of external feed",
+                detail:
+                    "Player game logs from third-party stats APIs and lines from sportsbook-odds APIs, landed into a " +
+                    "MySQL/SQLAlchemy warehouse with lineup, schedule and game-log ingestion paths per league.",
+            },
+            {
+                claim: "Analysis delivered as generated datasheets",
+                detail:
+                    "Automated Excel output for matchup-mismatch reports and three-point analysis, with conditional " +
+                    "formatting and embedded imagery, so the result was something readable rather than a table dump.",
+            },
+            {
+                claim: "One structure repeated cleanly across three leagues",
+                detail:
+                    "NBA, NFL and MLB each get the same package shape — CLI, subcommands, update path — so adding a " +
+                    "league was a known amount of work rather than a redesign. Poetry for reproducible dependencies, " +
+                    "pre-commit hooks, and a test package mirroring the source tree league by league.",
+            },
+        ],
+        receipts: [{ label: "Source", value: "statlume-api", href: "https://github.com/isaacfrett/statlume-api" }],
     },
 
     {
@@ -236,8 +305,8 @@ export const projects: Project[] = [
         period: "2025",
         role: "Solo — API, database, front-end",
         status: "archived",
-        tracks: ["fullstack", "frontend", "ml"],
-        weight: 3,
+        tracks: ["fullstack", "frontend"],
+        weight: 4,
         stack: ["FastAPI", "SQLAlchemy", "PostgreSQL", "PyJWT", "pytest", "React", "Context API", "Render"],
         summary:
             "A FastAPI service that fetches stock-quote snapshots from a market-data vendor and persists each user's " +
@@ -279,7 +348,7 @@ export const projects: Project[] = [
         role: "Solo — game and site",
         status: "testing",
         tracks: ["ios", "frontend"],
-        weight: 4,
+        weight: 5,
         stack: ["Godot", "GDScript", "iOS", "HTML", "CSS"],
         summary:
             "You start hand-mining ore from a bare rock and end up rewriting local physics so the ore was always there. " +
@@ -315,52 +384,15 @@ export const projects: Project[] = [
                 value: "idle-space-mining-site",
                 href: "https://github.com/isaacfrett/idle-space-mining-site",
             },
+            { label: "App Store", value: "submission in progress" },
         ],
-    },
-
-    {
-        id: "statlume",
-        name: "Statlume API",
-        tagline: "A Django service and CLI for multi-league sports statistics.",
-        period: "2024",
-        role: "Solo — data model, ingestion, CLI",
-        status: "archived",
-        tracks: ["fullstack", "ml"],
-        weight: 5,
-        stack: ["Django", "Python", "Poetry", "SQLite", "pytest", "pre-commit"],
-        summary:
-            "A Django application covering NBA, MLB and NFL, organised as per-league packages each exposing its own CLI " +
-            "with create and delete subcommands. Includes lineup, schedule and game-log ingestion, an odds layer, and " +
-            "generated datasheets for players, teams, mismatches and three-point splits.",
-        highlights: [
-            {
-                claim: "One structure repeated cleanly across three leagues",
-                detail:
-                    "NBA, MLB and NFL each get the same package shape — CLI, subcommands, update path — so a new league is " +
-                    "a known amount of work rather than a redesign. The NBA package goes deepest, with lineups, schedules, " +
-                    "logs and derived datasheets.",
-            },
-            {
-                claim: "Derived analysis, not just storage",
-                detail:
-                    "Datasheet modules compute player and team views, matchup mismatches and three-point breakdowns on top " +
-                    "of the ingested data, with separate points and rebounds models.",
-            },
-            {
-                claim: "Tooling set up before it was needed",
-                detail:
-                    "Poetry for reproducible dependency resolution, pre-commit hooks, and a test package mirroring the " +
-                    "source tree league by league.",
-            },
-        ],
-        receipts: [{ label: "Source", value: "statlume-api", href: "https://github.com/isaacfrett/statlume-api" }],
     },
 ];
 
 /** Coursework and earlier repositories, kept honest about what they are. */
 export const earlier = {
     note:
-        "Coursework and early repositories from my computer science degree, kept public rather than tidied away. " +
+        "Coursework and early repositories from my degree, kept public rather than tidied away. " +
         "They are what they are — the work above is the work that matters.",
     items: [
         { name: "CSD-340 — Web Development", href: "https://github.com/isaacfrett/csd-340", lang: "HTML" },
@@ -373,10 +405,6 @@ export const earlier = {
         { name: "CSD-310 — Database Development", href: "https://github.com/isaacfrett/csd-310", lang: "Python" },
         { name: "Simple Banking System", href: "https://github.com/isaacfrett/SimpleBankingSystem", lang: "Python" },
         { name: "C Examples", href: "https://github.com/isaacfrett/C_Examples", lang: "C" },
-        {
-            name: "Veterans transition website",
-            href: "https://github.com/isaacfrett/veterans_website",
-            lang: "Web",
-        },
+        { name: "Veterans transition website", href: "https://github.com/isaacfrett/veterans_website", lang: "Web" },
     ],
 };

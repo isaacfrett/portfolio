@@ -6,9 +6,9 @@ Personal portfolio. React + TypeScript, built with Vite, served by GitHub Pages 
 ## The idea
 
 Every claim on the page is paired with the artefact that settles it — a repository, a live site,
-a screenshot, the résumé. Where there is no receipt, the claim doesn't go on the page. Employment
+a screenshot, the resume. Where there is no receipt, the claim doesn't go on the page. Employment
 history is the one section that can't be settled by a public link, so it says so and points at the
-résumé and LinkedIn rather than pretending otherwise.
+resume and LinkedIn rather than pretending otherwise.
 
 ## Running it
 
@@ -31,8 +31,23 @@ All copy is data, not markup. To change what the site says, edit these and nothi
 | `src/data/experience.ts` | Jobs, education, and the experience lede |
 | `src/types.ts` | The shapes those three files fill in |
 
-Swapping the résumé means replacing `public/Isaac_Frett_Resume.pdf`. The filename is referenced in
-`src/data/profile.ts`, so keep it or change it in both places.
+## The resume
+
+The PDF is generated, not hand-maintained. Source is `resume/resume.html` + `resume.css`; rebuild
+it with:
+
+```bash
+npm run resume   # writes public/Isaac_Frett_Resume.pdf
+```
+
+`scripts/build-resume.mjs` serves `resume/` over localhost and renders it with the local copy of
+Chrome. Two things it works around, both of which produce a silently wrong PDF rather than an
+error: a `file://` page fails CORS on the webfonts and falls back to system fonts, and Chrome
+prints before webfonts load unless given `--virtual-time-budget`.
+
+The resume is deliberately light where the site is dark — it gets printed, forwarded, and read in
+an ATS preview pane, and none of those treat a dark page well. It's a single column for the same
+reason: sidebars and multi-column grids extract badly in applicant tracking systems.
 
 ## Design notes
 

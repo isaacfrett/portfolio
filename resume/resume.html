@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Isaac Frett — Software Engineer</title>
+        <meta name="author" content="Isaac Frett" />
+        <link rel="stylesheet" href="resume.css" />
+    </head>
+    <body>
+        <header class="head">
+            <h1 class="head__name">Isaac Frett</h1>
+            <p class="head__role">Software Engineer · <strong>Remote only, US</strong> · US citizen</p>
+            <p class="head__contact">
+                <span>isaacfrett2@gmail.com</span>
+                <span>563-349-0624</span>
+                <span>isaacfrett.com</span>
+                <span>github.com/isaacfrett</span>
+                <span>linkedin.com/in/isaacfrett</span>
+            </p>
+        </header>
+
+        <p class="thesis">I build systems that try to prove themselves wrong.</p>
+        <p class="summary">
+            Self-taught engineer and the primary technical owner on most of what I've built — the Python services and
+            ETL behind executive reporting at a Fortune 50 retailer, a financial-ML platform designed to reject its own
+            results, and a solo iOS studio taking three applications to submission. I'd rather ship one thing that
+            survives being checked than three that look good until someone looks.
+        </p>
+
+        <section class="section">
+            <h2 class="section__title">Experience</h2>
+
+            <div class="entry">
+                <div class="entry__head">
+                    <h3 class="entry__title">Founder &amp; Lead Software Engineer</h3>
+                    <span class="entry__leader"></span>
+                    <span class="entry__when">Jan 2026 — Present</span>
+                </div>
+                <p class="entry__org">IF Development <em>· Remote</em></p>
+                <ul class="points">
+                    <li>
+                        Founded and operate a solo iOS studio, owning product direction, architecture, implementation
+                        and the release process end to end.
+                    </li>
+                    <li>
+                        Built <strong>three multi-platform iOS applications</strong> for iPhone and iPad — designing the
+                        UI layouts, front-end graphics and project architecture for each. App Store submission in
+                        progress.
+                    </li>
+                    <li>
+                        Integrated push notifications, in-app purchases and AdMob SDKs through custom
+                        <strong>Godot C++ modules</strong> and community plugins.
+                    </li>
+                    <li>
+                        Set up the release pipeline end to end — certificates, provisioning profiles, code signing,
+                        build automation and App Store Connect submission — and ship each product with a public site
+                        that holds itself to the app's own privacy claim: no analytics, no third-party requests, so the
+                        policy stays a checkable fact rather than a promise.
+                    </li>
+                </ul>
+                <p class="stack">
+                    <b>Stack</b> Godot · C++ · GDScript · iOS / iPadOS · StoreKit / IAP · AdMob · App Store Connect
+                </p>
+            </div>
+
+            <div class="entry">
+                <div class="entry__head">
+                    <h3 class="entry__title">Software Engineer</h3>
+                    <span class="entry__leader"></span>
+                    <span class="entry__when">Jan 2023 — Dec 2025</span>
+                </div>
+                <p class="entry__org">Lowe's Home Improvement <em>· Charlotte, NC</em></p>
+                <ul class="points">
+                    <li>
+                        Designed and implemented scalable Python APIs (Flask, FastAPI) and microservices supporting
+                        <strong>500+ internal employees</strong>, with emphasis on C-level executive reporting.
+                    </li>
+                    <li>
+                        Owned the architecture and maintenance of ETL pipelines processing
+                        <strong>~150GB of data monthly</strong>, integrating databases into analytical models for React
+                        executive dashboards that informed <strong>$15M+ in business decisions</strong>.
+                    </li>
+                    <li>
+                        Developed automations around security software for threat detection, asset patching, firewall
+                        protocols and compliance reporting.
+                    </li>
+                </ul>
+                <p class="stack"><b>Stack</b> Python · Flask · FastAPI · React · SQL · ETL · microservices</p>
+            </div>
+
+            <div class="entry">
+                <div class="entry__head">
+                    <h3 class="entry__title">Merchandising Service Associate</h3>
+                    <span class="entry__leader"></span>
+                    <span class="entry__when">Apr 2022 — Jan 2023</span>
+                </div>
+                <p class="entry__org">Lowe's Home Improvement <em>· Coralville, IA</em></p>
+                <ul class="points">
+                    <li>
+                        Coordinated teams constructing physical marketing displays for branded products that directly
+                        impacted store revenue.
+                    </li>
+                    <li>
+                        3D-printed a pricing sign-adapter outside normal working hours, letting existing electronic
+                        signage be reused across any product display.
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section__title">Machine learning &amp; systems work</h2>
+
+            <div class="entry">
+                <div class="entry__head">
+                    <h3 class="entry__title">Quantitative Futures Trading Platform</h3>
+                    <span class="entry__leader"></span>
+                    <span class="entry__when">Archived</span>
+                </div>
+                <p class="entry__org">
+                    Sole architect and engineer <em>· overview: github.com/isaacfrett/quant-public</em>
+                </p>
+                <p class="entry__note">
+                    End-to-end research and execution platform that discovered, validated and deployed systematic
+                    futures strategies under anti-overfitting controls, then ran them against a broker API with hard
+                    risk governance. Built so that most candidates fail.
+                </p>
+                <ul class="points">
+                    <li>
+                        <strong>Modeling.</strong> LightGBM over a <strong>700+ feature panel</strong> from 50+ modular
+                        builders, on liquid CME macro futures, intraday on the 15-minute bar with 1h/4h/daily context.
+                        Two-stage side/meta architecture — a side model predicts direction, a meta model decides whether
+                        to act — with probabilities isotonically calibrated before position sizing.
+                    </li>
+                    <li>
+                        <strong>Validation.</strong> Walk-forward CV with <strong>purge and embargo</strong>, plus
+                        combinatorial purged CV for distribution-level out-of-sample estimates. Triple-barrier and
+                        volatility-normalised labels, de-overlapped so no training label reads prices inside a test
+                        window.
+                    </li>
+                    <li>
+                        <strong>Gating.</strong> L1 signal gates then L2 economic gates — net-of-cost Sharpe,
+                        <strong>deflated Sharpe</strong>, and <strong>probability of backtest overfitting</strong>.
+                        Commissions and slippage netted before any statistic is computed, so the gates judged tradable
+                        edge rather than paper edge.
+                    </li>
+                    <li>
+                        <strong>Integrity as a release gate.</strong> An automated lookahead auditor cross-checked every
+                        feature's first-valid index against the label horizon, and continuous backtest-to-live parity
+                        tests meant divergence stopped a change from shipping. Leakage was a release-blocking defect.
+                    </li>
+                    <li>
+                        <strong>Execution and operations.</strong> Bracketed order lifecycle with a risk governor —
+                        per-trade caps, exposure limits, drawdown halts, file-based kill switch — operated by a fleet of
+                        specialised agents across role-separated servers, surfaced through a real-time React/TypeScript
+                        dashboard over FastAPI.
+                    </li>
+                </ul>
+                <p class="stack">
+                    <b>Stack</b> Python 3.11 · LightGBM · scikit-learn · pandas · NumPy · Parquet/PyArrow · FastAPI ·
+                    React + TypeScript · systemd · pytest (TDD-first)
+                </p>
+            </div>
+
+            <div class="entry">
+                <div class="entry__head">
+                    <h3 class="entry__title">Statlume — multi-sport analytics service</h3>
+                    <span class="entry__leader"></span>
+                    <span class="entry__when">2024</span>
+                </div>
+                <p class="entry__org">Solo <em>· github.com/isaacfrett/statlume-api</em></p>
+                <ul class="points">
+                    <li>
+                        NBA, NFL and MLB statistics service over a <strong>MySQL/SQLAlchemy warehouse</strong> of player
+                        game logs, fed by third-party stats and sportsbook-odds APIs and run as a scheduled weekly job.
+                    </li>
+                    <li>
+                        <strong>NBA player-prop models</strong> for points and rebounds using TensorFlow/Keras and
+                        scikit-learn — RandomForest classifiers, standardised feature scaling, train/test splits — over
+                        rolling recent-form windows.
+                    </li>
+                    <li>
+                        <strong>NFL player clustering</strong> with K-means over standardised performance features for
+                        archetype segmentation, plus automated Excel datasheet generation for matchup-mismatch and
+                        three-point analysis.
+                    </li>
+                </ul>
+                <p class="stack">
+                    <b>Stack</b> Python · Django · TensorFlow/Keras · scikit-learn · MySQL · SQLAlchemy · Poetry ·
+                    pytest
+                </p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section__title">Education</h2>
+            <div class="entry">
+                <div class="entry__head">
+                    <h3 class="entry__title">B.S. Software Development</h3>
+                    <span class="entry__leader"></span>
+                    <span class="entry__when">2022 — 2024</span>
+                </div>
+                <p class="entry__org">Bellevue University <em>· graduated, 4.0 GPA</em></p>
+                <p class="entry__note">Cybersecurity Club · Phi Theta Kappa Honors Society</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section__title">Skills</h2>
+            <div class="skills">
+                <div class="skills__row">
+                    <span class="skills__label">Languages</span>
+                    <span class="skills__items">Python · JavaScript · TypeScript · Java · SQL · C++ · GDScript · Bash</span>
+                </div>
+                <div class="skills__row">
+                    <span class="skills__label">Backend</span>
+                    <span class="skills__items">FastAPI · Flask · Django · microservices · REST APIs · ETL pipelines</span>
+                </div>
+                <div class="skills__row">
+                    <span class="skills__label">Frontend</span>
+                    <span class="skills__items">React · TypeScript · Vite</span>
+                </div>
+                <div class="skills__row">
+                    <span class="skills__label">ML libraries</span>
+                    <span class="skills__items">
+                        LightGBM · scikit-learn · TensorFlow/Keras · PyTorch · NumPy · SciPy · pandas · PyArrow/Parquet
+                    </span>
+                </div>
+                <div class="skills__row">
+                    <span class="skills__label">ML methods</span>
+                    <span class="skills__items">
+                        Walk-forward CV with purge/embargo · combinatorial purged CV · meta-labeling · triple-barrier
+                        labeling · isotonic calibration · deflated Sharpe · probability of backtest overfitting ·
+                        feature-leakage auditing · cost-aware model gating
+                    </span>
+                </div>
+                <div class="skills__row">
+                    <span class="skills__label">Data &amp; cloud</span>
+                    <span class="skills__items">PostgreSQL · MySQL · AWS · Azure · GCP</span>
+                </div>
+                <div class="skills__row">
+                    <span class="skills__label">DevOps</span>
+                    <span class="skills__items">
+                        Git · CI/CD (Jenkins) · Docker/Podman · Kubernetes · systemd · Grafana · Power BI · pytest
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <p class="colophon">
+            Full case studies, screenshots and source links at isaacfrett.com — every claim there links to the artefact
+            that settles it.
+        </p>
+    </body>
+</html>

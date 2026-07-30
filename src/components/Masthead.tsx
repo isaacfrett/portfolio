@@ -37,7 +37,7 @@ export function Masthead() {
                 </nav>
 
                 <a className="masthead__resume mono" href={profile.resume} target="_blank" rel="noreferrer">
-                    Résumé <span aria-hidden="true">↓</span>
+                    Resume <span aria-hidden="true">↓</span>
                 </a>
             </div>
         </header>

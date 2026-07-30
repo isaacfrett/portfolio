@@ -5,9 +5,12 @@ import { TRACK_LABEL, type Project, type Track } from "../types";
 import { useReducedMotion } from "../hooks/useReducedMotion";
 import "./Work.css";
 
+/* "Built · in submission" rather than anything implying a live listing: none of
+   the three apps is on the App Store yet, and the site's whole premise is that
+   its claims survive being checked. */
 const STATUS_LABEL: Record<Project["status"], string> = {
     live: "Live",
-    testing: "In testing",
+    testing: "Built · in submission",
     "private-source": "Running · source private",
     archived: "Archived",
 };
