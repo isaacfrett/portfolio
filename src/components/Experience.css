@@ -1,0 +1,198 @@
+.experience__lede {
+    margin-bottom: 3.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   Timeline. The rule down the left is the spine; each role hangs off it.
+   -------------------------------------------------------------------------- */
+
+.track {
+    display: grid;
+    gap: 3rem;
+}
+
+.track__item {
+    display: grid;
+    grid-template-columns: 13.5rem 1fr;
+    gap: 1.5rem;
+    position: relative;
+}
+
+.track__when {
+    display: flex;
+    flex-direction: column;
+    font-size: var(--t-small);
+    color: var(--muted);
+    line-height: 1.5;
+    position: relative;
+    padding-left: 1.35rem;
+}
+
+/* The spine and its node. */
+.track__when::before {
+    content: "";
+    position: absolute;
+    left: 3px;
+    top: 0.55em;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--edge-bright);
+}
+
+.track__item:first-child .track__when::before {
+    background: var(--verified);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--verified) 18%, transparent);
+}
+
+.track__when::after {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: calc(0.55em + 14px);
+    bottom: -3rem;
+    width: 1px;
+    background: var(--edge);
+}
+
+.track__item:last-child .track__when::after {
+    display: none;
+}
+
+.track__dash {
+    color: var(--dim);
+}
+
+.track__end.is-present {
+    color: var(--verified);
+}
+
+.track__title {
+    font-size: var(--t-h3);
+    margin-bottom: 0.3rem;
+}
+
+.track__org {
+    color: var(--text);
+    font-weight: 500;
+    font-size: 0.9375rem;
+    margin-bottom: 0.9rem;
+}
+
+.track__loc {
+    color: var(--dim);
+    font-weight: 400;
+}
+
+.track__summary {
+    color: var(--muted);
+    max-width: 62ch;
+    margin-bottom: 1.1rem;
+}
+
+.track__points {
+    display: grid;
+    gap: 0.7rem;
+    max-width: 68ch;
+    margin-bottom: 1.25rem;
+}
+
+.track__points li {
+    position: relative;
+    padding-left: 1.1rem;
+    color: var(--muted);
+    font-size: 0.9375rem;
+}
+
+.track__points li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.68em;
+    width: 5px;
+    height: 1px;
+    background: var(--signal);
+}
+
+.track__stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.track__stack li {
+    font-family: var(--mono);
+    font-size: var(--t-micro);
+    color: var(--muted);
+    background: var(--panel);
+    border: 1px solid var(--edge);
+    border-radius: 5px;
+    padding: 0.24rem 0.55rem;
+}
+
+/* --------------------------------------------------------------------------
+   Education
+   -------------------------------------------------------------------------- */
+
+.education {
+    margin-top: 3.5rem;
+    display: grid;
+    gap: 1.5rem;
+}
+
+.education__item {
+    border: 1px solid var(--edge);
+    border-radius: var(--radius-lg);
+    background: var(--void-lift);
+    padding: 1.6rem 1.75rem;
+    max-width: 620px;
+}
+
+.education__item .eyebrow {
+    margin-bottom: 0.75rem;
+}
+
+.education__item h3 {
+    font-size: 1.1875rem;
+    margin-bottom: 0.35rem;
+}
+
+.education__org {
+    color: var(--text);
+    font-size: 0.9375rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.65rem;
+    margin-bottom: 0.55rem;
+}
+
+.education__period {
+    font-size: var(--t-micro);
+    color: var(--dim);
+}
+
+.education__detail {
+    color: var(--muted);
+    font-size: var(--t-small);
+}
+
+@media (max-width: 860px) {
+    .track__item {
+        grid-template-columns: 1fr;
+        gap: 0.85rem;
+    }
+
+    .track__when {
+        flex-direction: row;
+        gap: 0.4rem;
+    }
+
+    .track__when::after {
+        display: none;
+    }
+
+    .track__body {
+        padding-left: 1.35rem;
+    }
+}

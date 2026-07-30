@@ -1,0 +1,406 @@
+/* --------------------------------------------------------------------------
+   Filter chips
+   -------------------------------------------------------------------------- */
+
+.work__filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: var(--t-small);
+    font-weight: 500;
+    color: var(--muted);
+    background: var(--panel);
+    border: 1px solid var(--edge);
+    border-radius: 999px;
+    padding: 0.45rem 0.95rem;
+    transition: color var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease),
+        background var(--dur-fast) var(--ease);
+}
+
+.chip:hover {
+    color: var(--text);
+    border-color: var(--edge-bright);
+}
+
+.chip.is-active {
+    color: var(--void);
+    background: var(--signal);
+    border-color: var(--signal);
+}
+
+.chip__count {
+    font-size: var(--t-micro);
+    opacity: 0.65;
+}
+
+/* --------------------------------------------------------------------------
+   Rows
+   -------------------------------------------------------------------------- */
+
+.work__list {
+    border-top: 1px solid var(--edge);
+}
+
+.row {
+    border-bottom: 1px solid var(--edge);
+    /* Fires once per mount, so a row filtered back into view fades in while
+       rows that merely moved are handled by the FLIP transform instead. */
+    animation: row-in var(--dur) var(--ease-out) backwards;
+}
+
+@keyframes row-in {
+    from {
+        opacity: 0;
+    }
+}
+
+.row__head {
+    display: grid;
+    grid-template-columns: 13.5rem 1fr auto;
+    align-items: start;
+    gap: 1.5rem;
+    width: 100%;
+    text-align: left;
+    padding: 1.6rem 0;
+}
+
+.row__meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding-top: 0.2rem;
+}
+
+.row__period {
+    font-size: var(--t-micro);
+    color: var(--dim);
+}
+
+.row__title {
+    display: block;
+}
+
+.row__name {
+    display: block;
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: var(--t-h3);
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    color: var(--text);
+    transition: color var(--dur-fast) var(--ease);
+}
+
+.row__head:hover .row__name {
+    color: var(--signal);
+}
+
+.row__tagline {
+    display: block;
+    color: var(--muted);
+    font-size: 0.9375rem;
+    margin-top: 0.35rem;
+    max-width: 54ch;
+}
+
+/* Plus that becomes a minus. */
+.row__toggle {
+    position: relative;
+    width: 1.5rem;
+    height: 1.5rem;
+    flex: none;
+    margin-top: 0.35rem;
+    border: 1px solid var(--edge-bright);
+    border-radius: 50%;
+    transition: border-color var(--dur-fast) var(--ease), background var(--dur-fast) var(--ease);
+}
+
+.row__head:hover .row__toggle {
+    border-color: var(--signal);
+    background: color-mix(in srgb, var(--signal) 12%, transparent);
+}
+
+.row__toggle-bar {
+    position: absolute;
+    inset: 50% 0.3rem auto;
+    height: 1px;
+    background: var(--muted);
+    transition: transform var(--dur) var(--ease-out), background var(--dur-fast) var(--ease);
+}
+
+.row__toggle-bar:last-child {
+    transform: rotate(90deg);
+}
+
+.row.is-open .row__toggle-bar:last-child {
+    transform: rotate(0deg);
+}
+
+.row.is-open .row__toggle {
+    border-color: var(--signal);
+}
+
+.row.is-open .row__toggle-bar {
+    background: var(--signal);
+}
+
+/* --------------------------------------------------------------------------
+   Expanding panel
+   -------------------------------------------------------------------------- */
+
+.row__panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows var(--dur-slow) var(--ease-out);
+}
+
+.row.is-open .row__panel {
+    grid-template-rows: 1fr;
+}
+
+.row__panel-inner {
+    overflow: hidden;
+    min-height: 0;
+    opacity: 0;
+    transition: opacity var(--dur) var(--ease);
+}
+
+.row.is-open .row__panel-inner {
+    opacity: 1;
+    transition-delay: 90ms;
+}
+
+/* Panel content sits under the title column on wide screens. */
+.row__panel-inner > * {
+    margin-left: 0;
+}
+
+@media (min-width: 861px) {
+    .row__panel-inner > * {
+        margin-left: 15rem;
+    }
+}
+
+.row__summary {
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    max-width: 62ch;
+    padding-bottom: 1.1rem;
+}
+
+.row__role {
+    font-size: var(--t-micro);
+    letter-spacing: 0.06em;
+    color: var(--dim);
+    text-transform: uppercase;
+    padding-bottom: 1.25rem;
+}
+
+.row__stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    padding-bottom: 2rem;
+}
+
+.row__stack li {
+    font-family: var(--mono);
+    font-size: var(--t-micro);
+    color: var(--muted);
+    background: var(--panel);
+    border: 1px solid var(--edge);
+    border-radius: 5px;
+    padding: 0.24rem 0.55rem;
+}
+
+.row__highlights {
+    display: grid;
+    gap: 1.5rem;
+    max-width: 68ch;
+    padding-bottom: 2rem;
+}
+
+.row__highlights h4 {
+    font-family: var(--body);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    line-height: 1.4;
+    color: var(--text);
+    padding-left: 0.9rem;
+    border-left: 2px solid var(--verified);
+    margin-bottom: 0.45rem;
+}
+
+.row__highlights p {
+    color: var(--muted);
+    font-size: 0.9375rem;
+    padding-left: 0.9rem;
+    border-left: 1px solid var(--edge);
+}
+
+/* --------------------------------------------------------------------------
+   Screenshots
+   -------------------------------------------------------------------------- */
+
+.row__shots {
+    display: grid;
+    gap: 1.5rem;
+    padding-bottom: 2.25rem;
+}
+
+.row__shots figure {
+    margin: 0;
+}
+
+.row__shots img {
+    width: 100%;
+    border: 1px solid var(--edge);
+    border-radius: var(--radius-lg);
+    background: var(--panel);
+}
+
+.row__shots figcaption {
+    color: var(--dim);
+    font-size: var(--t-small);
+    margin-top: 0.7rem;
+    max-width: 62ch;
+}
+
+/* --------------------------------------------------------------------------
+   Receipts — the same claim/evidence device as the hero ledger
+   -------------------------------------------------------------------------- */
+
+.row__receipts {
+    padding-bottom: 2.25rem;
+    max-width: 560px;
+}
+
+.row__receipts .eyebrow {
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--edge);
+}
+
+.row__receipts li {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--edge);
+}
+
+/* Same leader device as the hero ledger, drawn by the label. */
+.row__receipt-label {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    flex: 1;
+    min-width: 0;
+    font-size: var(--t-small);
+    color: var(--text);
+}
+
+.row__receipt-label::after {
+    content: "";
+    flex: 1;
+    min-width: 1rem;
+    border-bottom: 1px dotted var(--edge-bright);
+    transform: translateY(-0.25em);
+}
+
+.row__receipts a {
+    font-size: var(--t-small);
+    color: var(--signal);
+    transition: color var(--dur-fast) var(--ease);
+}
+
+.row__receipts a:hover {
+    color: var(--text);
+}
+
+.row__receipt-plain {
+    font-size: var(--t-small);
+    color: var(--dim);
+}
+
+/* --------------------------------------------------------------------------
+   Earlier repositories
+   -------------------------------------------------------------------------- */
+
+.earlier {
+    margin-top: 4rem;
+    padding: 1.75rem;
+    border: 1px solid var(--edge);
+    border-radius: var(--radius-lg);
+    background: var(--void-lift);
+}
+
+.earlier__title {
+    font-size: 1.0625rem;
+    margin-bottom: 0.5rem;
+}
+
+.earlier__note {
+    color: var(--muted);
+    font-size: var(--t-small);
+    max-width: 62ch;
+    margin-bottom: 1.25rem;
+}
+
+.earlier__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 0.25rem 1.5rem;
+}
+
+.earlier__list a {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.5rem 0;
+    color: var(--muted);
+    font-size: var(--t-small);
+    border-bottom: 1px solid var(--edge);
+    transition: color var(--dur-fast) var(--ease);
+}
+
+.earlier__list a:hover {
+    color: var(--signal);
+}
+
+.earlier__lang {
+    font-size: var(--t-micro);
+    color: var(--dim);
+}
+
+/* --------------------------------------------------------------------------
+   Narrow screens
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 860px) {
+    .row__head {
+        grid-template-columns: 1fr auto;
+        gap: 0.6rem 1rem;
+    }
+
+    .row__meta {
+        grid-column: 1 / -1;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.85rem;
+        padding-top: 0;
+    }
+
+    .row__toggle {
+        margin-top: 0;
+        align-self: center;
+    }
+}

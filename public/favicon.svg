@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Isaac Frett">
+    <!-- The ledger row reduced to a mark: a claim, the leader that runs across,
+         and the dot that settles it. The same idea the site is built on. -->
+    <rect width="32" height="32" rx="7" fill="#0a0e14" />
+    <g stroke-linecap="round" stroke-width="2">
+        <path d="M8 11h10" stroke="#4c8dff" />
+        <path d="M8 16h11" stroke="#8a99ad" stroke-dasharray="0.5 3.2" />
+        <path d="M8 21h6" stroke="#4c8dff" opacity="0.45" />
+    </g>
+    <circle cx="23.5" cy="16" r="2.6" fill="#3fb950" />
+</svg>

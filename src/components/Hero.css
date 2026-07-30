@@ -1,0 +1,195 @@
+.hero {
+    padding-block: clamp(3.5rem, 2rem + 7vw, 7.5rem) clamp(4rem, 2.5rem + 7vw, 8rem);
+    position: relative;
+    overflow: hidden;
+}
+
+/* A single faint field behind the hero, keyed to the signal colour. It is the
+   only ambient effect on the page. */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: -30% 30% 40% -20%;
+    background: radial-gradient(
+        50% 50% at 30% 40%,
+        color-mix(in srgb, var(--signal) 13%, transparent),
+        transparent 70%
+    );
+    pointer-events: none;
+    filter: blur(20px);
+}
+
+.hero__inner {
+    position: relative;
+}
+
+.hero__eyebrow {
+    margin-bottom: 1.75rem;
+}
+
+.hero__headline {
+    font-size: var(--t-mega);
+    max-width: 17ch;
+    margin-bottom: 1.75rem;
+}
+
+.hero__lede {
+    margin-bottom: clamp(2.75rem, 2rem + 2.5vw, 4rem);
+}
+
+/* --------------------------------------------------------------------------
+   The ledger
+   -------------------------------------------------------------------------- */
+
+.ledger {
+    border-top: 1px solid var(--edge);
+    max-width: 780px;
+}
+
+.ledger__caption {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.7rem 0 0.55rem;
+    border-bottom: 1px solid var(--edge);
+}
+
+.ledger__row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.85rem;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--edge);
+    animation: ledger-in var(--dur-slow) var(--ease-out) backwards;
+    animation-delay: calc(160ms + var(--i) * 80ms);
+}
+
+@keyframes ledger-in {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+}
+
+.ledger__claim {
+    display: flex;
+    align-items: baseline;
+    gap: 0.85rem;
+    flex: 1;
+    min-width: 0;
+    color: var(--text);
+    font-size: 0.9375rem;
+    font-weight: 500;
+}
+
+/* Dotted leader, the way a printed table of contents runs the eye across.
+   Drawn by the term itself so the markup stays a clean dt/dd pair. */
+.ledger__claim::after {
+    content: "";
+    flex: 1;
+    min-width: 1.5rem;
+    border-bottom: 1px dotted var(--edge-bright);
+    transform: translateY(-0.25em);
+}
+
+.ledger__value {
+    margin: 0;
+    flex: none;
+    font-size: var(--t-small);
+    color: var(--muted);
+    white-space: nowrap;
+}
+
+.ledger__value a {
+    color: var(--signal);
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.35rem;
+    transition: color var(--dur-fast) var(--ease);
+}
+
+.ledger__value a:hover {
+    color: var(--text);
+}
+
+.ledger__arrow {
+    font-size: 0.8em;
+    opacity: 0.7;
+    transition: transform var(--dur) var(--ease-out);
+}
+
+.ledger__value a:hover .ledger__arrow {
+    transform: translate(2px, -2px);
+}
+
+.ledger__row:has(a[href^="#"]) .ledger__value a:hover .ledger__arrow {
+    transform: translateY(2px);
+}
+
+.ledger__body {
+    margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Actions
+   -------------------------------------------------------------------------- */
+
+.hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.85rem 1.15rem;
+    margin-top: 2.5rem;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: var(--t-small);
+    font-weight: 600;
+    color: var(--text);
+    border: 1px solid var(--edge-bright);
+    border-radius: 999px;
+    padding: 0.65rem 1.35rem;
+    transition: border-color var(--dur-fast) var(--ease), background var(--dur-fast) var(--ease),
+        color var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease);
+}
+
+.btn:hover {
+    border-color: var(--signal);
+    background: color-mix(in srgb, var(--signal) 10%, transparent);
+    transform: translateY(-1px);
+}
+
+.btn--primary {
+    background: var(--signal);
+    border-color: var(--signal);
+    color: var(--void);
+}
+
+.btn--primary:hover {
+    background: color-mix(in srgb, var(--signal) 88%, white);
+    border-color: color-mix(in srgb, var(--signal) 88%, white);
+    color: var(--void);
+}
+
+.hero__availability {
+    color: var(--verified);
+}
+
+@media (max-width: 640px) {
+    .ledger__row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.2rem;
+    }
+
+    /* The leader only makes sense when the pair sits on one line. */
+    .ledger__claim::after {
+        display: none;
+    }
+
+    .ledger__value {
+        white-space: normal;
+    }
+}
