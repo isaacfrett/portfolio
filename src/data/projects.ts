@@ -7,8 +7,10 @@ import dashHealth from "../assets/quant-health.png";
    repository. Nothing here is rounded up.
 
    Two standing accuracy constraints, carried over from the master resume:
-     · The iOS apps are built and in submission. Never "shipped", "published"
-       or "launched", and never a download, rating or revenue figure.
+     · The three iOS apps are live on the App Store as of August 2026, verified
+       against the iTunes lookup API rather than assumed. "Released" is now
+       true and checkable; a download, rating or revenue figure still is not,
+       so none appears here.
      · Statlume's predictive accuracy was never measured. Describe what was
        built, never how well it performed. */
 
@@ -134,15 +136,16 @@ export const projects: Project[] = [
         name: "Choice Bible",
         tagline: "A Bible reader that puts the typography in the reader's hands.",
         period: "2026",
-        role: "Solo — app, site, App Store submission",
-        status: "testing",
+        role: "Solo — app, site, App Store release",
+        status: "live",
         tracks: ["ios", "frontend"],
         weight: 1,
         stack: ["iOS", "iPadOS", "macOS", "iCloud sync", "Full-text search", "HTML", "CSS"],
         summary:
             "A Bible reader for iPhone, iPad and Mac built around real book typography — twelve typefaces, justified " +
-            "text, hyphenation, first-line and hanging indents. Three public-domain translations ship in full inside the " +
-            "app, along with the search index, so it works with no signal.",
+            "text, hyphenation, first-line and hanging indents. Seven public-domain translations ship in full inside " +
+            "the app, along with the entire search index, so it works with no signal. Free, with nothing to unlock and " +
+            "no in-app purchases.",
         highlights: [
             {
                 claim: "Typographic control usually reserved for print",
@@ -153,15 +156,18 @@ export const projects: Project[] = [
             {
                 claim: "Translation comparison at the tap of a verse",
                 detail:
-                    "Read one translation; when a verse is unclear, tap it or select a passage and see it in every " +
-                    "translation at full width. Berean Standard, King James and American Standard all ship complete and " +
+                    "Seven translations in narrow side-by-side columns is unreadable on a phone, so the app doesn't do " +
+                    "that. Read one translation; when a verse is unclear, tap it or widen the selection a verse at a " +
+                    "time and see the passage in every translation at full width. Berean Standard, World English, King " +
+                    "James, American Standard, Young's Literal, Darby and Bible in Basic English all ship complete and " +
                     "unlocked, being public domain.",
             },
             {
                 claim: "Sync without an account or a server",
                 detail:
-                    "Highlights, notes and bookmarks move between iPhone, iPad and Mac through the reader's own iCloud " +
-                    "account. No sign-up and no server of mine. Notes and highlights export to PDF at any time.",
+                    "Highlights, notes, bookmarks, reading position and even typography settings move between iPhone, " +
+                    "iPad and Mac through the reader's own iCloud account. No sign-up and no server of mine, which " +
+                    "means the data is not mine to see. Notes and highlights export to PDF at any time.",
             },
             {
                 claim: "A site that keeps its own privacy policy true",
@@ -174,13 +180,17 @@ export const projects: Project[] = [
             },
         ],
         receipts: [
+            {
+                label: "App Store",
+                value: "Choice Bible",
+                href: "https://apps.apple.com/us/app/choice-bible/id6795552456",
+            },
             { label: "Live site", value: "choicebible.com", href: "https://choicebible.com" },
             {
                 label: "Site source",
                 value: "choicebible-public",
                 href: "https://github.com/isaacfrett/choicebible-public",
             },
-            { label: "App Store", value: "submission in progress" },
         ],
     },
 
@@ -190,28 +200,54 @@ export const projects: Project[] = [
         tagline: "One star. Four ways to break it.",
         period: "2026",
         role: "Solo — game, level tooling, site",
-        status: "testing",
+        status: "live",
         tracks: ["ios", "frontend"],
         weight: 2,
         stack: ["Godot", "GDScript", "C++ modules", "iOS", "iPadOS", "HTML", "CSS"],
         summary:
-            "A cosmic match-3 for iPhone and iPad built around a single move: every level hands you one star, and you tap " +
-            "it rather than swap it, choosing the shape it breaks into. Three hundred levels, each one measured before it " +
-            "ships.",
+            "A cosmic match-3 for iPhone and iPad built around a single move: every level hands you one star, and you " +
+            "tap it rather than swap it, choosing the shape it breaks into. Six hundred levels across six chapters, " +
+            "each level measured before it ships, and all of it playable offline.",
         highlights: [
             {
                 claim: "Every level's difficulty is measured, not guessed",
                 detail:
-                    "Each of the 300 levels is played thousands of times by a bot before release, and its move budget is " +
-                    "set from what that measures. An unfair level is a level that can be found and fixed — and level 187 " +
-                    "is the same board for every player on every device.",
+                    "Each of the 600 levels is played thousands of times by a bot before release, and its move budget " +
+                    "is set from what that measures. An unfair level is a level that can be found and fixed — and level " +
+                    "187 is the same board for every player on every device, so a level that beats you is a level you " +
+                    "can learn rather than one you got unlucky with.",
             },
             {
                 claim: "Four splits that are deliberately not a power ladder",
                 detail:
                     "Cross, Rows, Columns and Crater land within a handful of cells of each other on a nine-wide board. " +
-                    "They differ in shape rather than size, so the choice belongs to the level in front of you instead of " +
-                    "to a best answer memorised once.",
+                    "They differ in shape rather than size, so the choice belongs to the level in front of you instead " +
+                    "of to a best answer memorised once. It is also the only real choice the board hands you — every " +
+                    "other move does what the pieces under your finger were already going to do.",
+            },
+            {
+                claim: "Six chapters, each introducing a mechanic the game has never done",
+                detail:
+                    "Every hundred levels opens a region with its own sky and its own new rule: the six board obstacles, " +
+                    "then a stasis field that creeps if ignored, a seventh colour that thins every match, levels that " +
+                    "run on a clock instead of a move budget, goals that ask you to build specials rather than clear " +
+                    "them, and finally the creeping field itself as the target. Wormholes reroute where gems land and " +
+                    "walls cut the board in half.",
+            },
+            {
+                claim: "Progression that rewards playing, not grinding",
+                detail:
+                    "One currency, earned by playing, with no soft-and-hard pair to juggle. It pays out on new levels " +
+                    "only, so going back to finish something properly is what earns rather than farming a level already " +
+                    "beaten. Lives refill on their own, and the weekly challenge slate is the same three goals for " +
+                    "everyone alive that week.",
+            },
+            {
+                claim: "Comfort options that are off until asked for",
+                detail:
+                    "Hints, reduced motion and colourblind marks all live in Settings and all default to off, so the " +
+                    "board stays quiet unless the player wants it otherwise. Full iPad support in both portrait and " +
+                    "landscape.",
             },
             {
                 claim: "Plays offline, no sign-in, no dark patterns",
@@ -228,13 +264,9 @@ export const projects: Project[] = [
             },
         ],
         receipts: [
-            {
-                label: "Live site",
-                value: "isaacfrett.github.io/starsplit",
-                href: "https://isaacfrett.github.io/starsplit/",
-            },
+            { label: "App Store", value: "Starsplit", href: "https://apps.apple.com/us/app/starsplit/id6791795719" },
+            { label: "Live site", value: "starsplit.app", href: "https://starsplit.app" },
             { label: "Site source", value: "starsplit", href: "https://github.com/isaacfrett/starsplit" },
-            { label: "App Store", value: "submission in progress" },
         ],
     },
 
@@ -246,7 +278,7 @@ export const projects: Project[] = [
         role: "Solo — warehouse, ingestion, models, delivery",
         status: "archived",
         tracks: ["ml", "fullstack"],
-        weight: 3,
+        weight: 4,
         stack: [
             "Python",
             "Django",
@@ -306,7 +338,7 @@ export const projects: Project[] = [
         role: "Solo — API, database, front-end",
         status: "archived",
         tracks: ["fullstack", "frontend"],
-        weight: 4,
+        weight: 5,
         stack: ["FastAPI", "SQLAlchemy", "PostgreSQL", "PyJWT", "pytest", "React", "Context API", "Render"],
         summary:
             "A FastAPI service that fetches stock-quote snapshots from a market-data vendor and persists each user's " +
@@ -346,9 +378,9 @@ export const projects: Project[] = [
         tagline: "An idle game about scale, with no dark patterns.",
         period: "2026",
         role: "Solo — game and site",
-        status: "testing",
+        status: "live",
         tracks: ["ios", "frontend"],
-        weight: 5,
+        weight: 3,
         stack: ["Godot", "GDScript", "iOS", "HTML", "CSS"],
         summary:
             "You start hand-mining ore from a bare rock and end up rewriting local physics so the ore was always there. " +
@@ -363,8 +395,17 @@ export const projects: Project[] = [
             {
                 claim: "A prestige above the prestige",
                 detail:
-                    "When growth stalls you collapse the colony, losing ore, generators and tech but keeping Dark Matter, " +
-                    "with every scrap ever earned making the next run permanently stronger.",
+                    "When growth stalls you collapse the colony, losing ore, generators and tech but keeping Dark " +
+                    "Matter, with every scrap ever earned making the next run permanently stronger. Above that sits " +
+                    "heat death: let the universe run down and trade everything, Dark Matter included, for Star Shards " +
+                    "that buy upgrades surviving the end of everything.",
+            },
+            {
+                claim: "Constraint runs and offline progress",
+                detail:
+                    "Challenges re-run the game with a rule removed — no tapping, triple-length harvest cycles, only " +
+                    "three generator types — and beating one keeps its bonus permanently. The colony keeps mining while " +
+                    "the app is closed, and comets drift past during play for a lump of ore or a burst of production.",
             },
             {
                 claim: "Monetisation that never interrupts play",
@@ -375,16 +416,16 @@ export const projects: Project[] = [
         ],
         receipts: [
             {
-                label: "Live site",
-                value: "isaacfrett.github.io/idle-space-mining-site",
-                href: "https://isaacfrett.github.io/idle-space-mining-site/",
+                label: "App Store",
+                value: "Idle Space Mining",
+                href: "https://apps.apple.com/us/app/idle-space-mining/id6790513254",
             },
+            { label: "Live site", value: "idlespacemining.app", href: "https://idlespacemining.app" },
             {
                 label: "Site source",
                 value: "idle-space-mining-site",
                 href: "https://github.com/isaacfrett/idle-space-mining-site",
             },
-            { label: "App Store", value: "submission in progress" },
         ],
     },
 ];

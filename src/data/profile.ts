@@ -16,7 +16,7 @@ export const profile = {
     lede:
         "Self-taught software engineer, 5+ years writing code and usually the primary technical owner — backend and " +
         "data platforms at enterprise scale, applied financial ML built to reject its own results, and a solo iOS " +
-        "studio. Every claim on this page links to the thing that settles it.",
+        "studio with three apps on the App Store. Every claim on this page links to the thing that settles it.",
     location: "Daytona Beach, FL",
     github: "https://github.com/isaacfrett",
     githubHandle: "github.com/isaacfrett",
@@ -45,9 +45,9 @@ export const ledger: Receipt[] = [
         href: "#experience",
     },
     {
-        label: "iOS applications built, submission in progress",
-        value: "3 products",
-        href: "#work",
+        label: "iOS applications shipped to the App Store",
+        value: "3 live listings",
+        href: "https://apps.apple.com/us/developer/isaac-michael-frett/id1877499106",
     },
     {
         label: "Applied ML — prop models, clustering, feature pipelines",

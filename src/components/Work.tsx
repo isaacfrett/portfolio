@@ -5,9 +5,11 @@ import { TRACK_LABEL, type Project, type Track } from "../types";
 import { useReducedMotion } from "../hooks/useReducedMotion";
 import "./Work.css";
 
-/* "Built · in submission" rather than anything implying a live listing: none of
-   the three apps is on the App Store yet, and the site's whole premise is that
-   its claims survive being checked. */
+/* The three iOS apps went live on the App Store in August 2026, so "Live" is
+   now the checkable word for them and each carries its listing as a receipt.
+   "Built · in submission" stays defined for the next thing that is genuinely
+   between those two states — the site's premise is that its claims survive
+   being checked, which cuts both ways. */
 const STATUS_LABEL: Record<Project["status"], string> = {
     live: "Live",
     testing: "Built · in submission",

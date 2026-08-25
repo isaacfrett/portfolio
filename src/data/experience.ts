@@ -18,9 +18,9 @@ export const jobs: Job[] = [
         location: "Remote",
         summary:
             "Founded and operate a solo iOS studio, owning product direction, architecture, implementation and the " +
-            "release process end to end.",
+            "release process end to end. Three apps are live on the App Store.",
         points: [
-            "Built three multi-platform iOS applications for iPhone and iPad, designing the UI layouts, front-end graphics and project architecture for each. App Store submission in progress.",
+            "Shipped three iOS applications to the App Store — Starsplit, Choice Bible and Idle Space Mining — designing the UI layouts, front-end graphics and project architecture for each, and shipping updates since release.",
             "Integrated push notifications, in-app purchases and AdMob SDKs through custom Godot C++ modules and community plugins.",
             "Set up the release pipeline end to end — certificates, provisioning profiles, code signing, build automation and App Store Connect submission.",
         ],

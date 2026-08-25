@@ -22,11 +22,12 @@
         <section class="section">
             <h2 class="section__title">Summary</h2>
             <p class="summary">
-                Self-taught software engineer with 5+ years writing code, and the primary technical owner on most of
-                what I've built — the Python services and ETL behind executive reporting at a Fortune 50 retailer, a
-                financial-ML platform designed to reject its own results, and a solo iOS studio taking three
-                applications to submission. I'd rather ship one thing that survives being checked than three that look
-                good until someone looks.
+                Self-taught software engineer with 5+ years of experience, and usually the person who owns the whole
+                thing — the design, the code, the deploy, and whatever breaks afterwards. The Python services and data
+                pipelines behind executive reporting at a Fortune 50 retailer, a machine-learning trading platform built
+                to throw out its own bad ideas, and a one-person iOS studio with
+                <strong>three apps on the App Store</strong>. I would rather ship one thing that holds up when someone
+                checks it than three that look good until they do.
             </p>
         </section>
 
@@ -42,27 +43,23 @@
                 <p class="entry__org">IF Development <em>· Remote</em></p>
                 <ul class="points">
                     <li>
-                        Founded and operate a solo iOS studio, owning product direction, architecture, implementation
-                        and the release process end to end.
+                        Run a one-person iOS studio — product design, code, artwork, websites, store listings and
+                        releases. Shipped <strong>three apps to the App Store</strong> (Starsplit, Choice Bible, Idle
+                        Space Mining) and have kept shipping updates since.
                     </li>
                     <li>
-                        Built <strong>three multi-platform iOS applications</strong> for iPhone and iPad — designing the
-                        UI layouts, front-end graphics and project architecture for each. App Store submission in
-                        progress.
+                        Wrote custom C++ extensions for the Godot game engine to reach iOS features it does not cover on
+                        its own — push notifications, in-app purchases and ads — and set up the whole release process
+                        from scratch: signing certificates, provisioning profiles, automated builds and App Store
+                        review.
                     </li>
                     <li>
-                        Integrated push notifications, in-app purchases and AdMob SDKs through custom
-                        <strong>Godot C++ modules</strong> and community plugins.
-                    </li>
-                    <li>
-                        Set up the release pipeline end to end — certificates, provisioning profiles, code signing,
-                        build automation and App Store Connect submission — and ship each product with a public site
-                        that holds itself to the app's own privacy claim: no analytics, no third-party requests, so the
-                        policy stays a checkable fact rather than a promise.
+                        Every app ships with its own website, built as plain HTML with no analytics and no third-party
+                        requests, so the privacy policy is something a reader can check rather than take my word for.
                     </li>
                 </ul>
                 <p class="stack">
-                    <b>Stack</b> Godot · C++ · GDScript · iOS / iPadOS · StoreKit / IAP · AdMob · App Store Connect
+                    <b>Stack</b> Godot · C++ · GDScript · iOS / iPadOS / macOS · StoreKit / IAP · App Store Connect
                 </p>
             </div>
 
@@ -75,17 +72,17 @@
                 <p class="entry__org">Lowe's Home Improvement <em>· Charlotte, NC</em></p>
                 <ul class="points">
                     <li>
-                        Designed and implemented scalable Python APIs (Flask, FastAPI) and microservices supporting
-                        <strong>500+ internal employees</strong>, with emphasis on C-level executive reporting.
+                        Built and maintained the Python web services (Flask, FastAPI) used by
+                        <strong>500+ employees</strong>, including the reporting that went up to the executive team.
                     </li>
                     <li>
-                        Owned the architecture and maintenance of ETL pipelines processing
-                        <strong>~150GB of data monthly</strong>, integrating databases into analytical models for React
-                        executive dashboards that informed <strong>$15M+ in business decisions</strong>.
+                        Owned the data pipelines that moved and cleaned roughly
+                        <strong>150GB of data a month</strong> and fed the React dashboards executives used to make
+                        decisions worth <strong>$15M+</strong>.
                     </li>
                     <li>
-                        Developed automations around security software for threat detection, asset patching, firewall
-                        protocols and compliance reporting.
+                        Automated the repetitive parts of our security tooling: threat alerts, patching machines,
+                        firewall rules and compliance reports.
                     </li>
                 </ul>
                 <p class="stack"><b>Stack</b> Python · Flask · FastAPI · React · SQL · ETL · microservices</p>
@@ -100,19 +97,77 @@
                 <p class="entry__org">Lowe's Home Improvement <em>· Coralville, IA</em></p>
                 <ul class="points">
                     <li>
-                        Coordinated teams constructing physical marketing displays for branded products that directly
-                        impacted store revenue.
-                    </li>
-                    <li>
-                        3D-printed a pricing sign-adapter outside normal working hours, letting existing electronic
-                        signage be reused across any product display.
+                        Ran the teams that built in-store product displays. Our electronic price signs only fit one kind
+                        of display, so I designed and 3D-printed an adapter on my own time that let the store reuse them
+                        on any of them.
                     </li>
                 </ul>
             </div>
         </section>
 
         <section class="section">
-            <h2 class="section__title">Machine learning &amp; systems work</h2>
+            <h2 class="section__title">Projects</h2>
+
+            <div class="entry">
+                <div class="entry__head">
+                    <h3 class="entry__title">Starsplit — puzzle game for iPhone and iPad</h3>
+                    <span class="entry__leader"></span>
+                    <span class="entry__when">2026 · live</span>
+                </div>
+                <p class="entry__org">Solo <em>· free on the App Store · starsplit.app</em></p>
+                <ul class="points">
+                    <li>
+                        A match-3 game built around one real decision per level: a star appears, and you pick which of
+                        four shapes it breaks into. <strong>600 levels across six chapters</strong>, each chapter
+                        introducing a rule the game has not used before.
+                    </li>
+                    <li>
+                        Difficulty is measured rather than guessed. A bot plays every level thousands of times before
+                        release and the move limit comes from what it finds, so a level that beats you is one you can
+                        learn instead of one you got unlucky on. Runs entirely on the device — no account, no internet
+                        required, no ads.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <div class="entry__head">
+                    <h3 class="entry__title">Choice Bible — reader for iPhone, iPad and Mac</h3>
+                    <span class="entry__leader"></span>
+                    <span class="entry__when">2026 · live</span>
+                </div>
+                <p class="entry__org">Solo <em>· free on the App Store · choicebible.com</em></p>
+                <ul class="points">
+                    <li>
+                        <strong>Seven translations and the entire search index ship inside the app</strong>, so every
+                        feature works with no signal. Gives readers the typography controls a print designer expects —
+                        twelve typefaces, justification, hyphenation, spacing and margins.
+                    </li>
+                    <li>
+                        Notes, highlights and reading position sync across iPhone, iPad and Mac through the reader's
+                        own iCloud account — no account to create, no server of mine, and nothing for me to see.
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="entry">
+                <div class="entry__head">
+                    <h3 class="entry__title">Idle Space Mining — idle game for iPhone and iPad</h3>
+                    <span class="entry__leader"></span>
+                    <span class="entry__when">2026 · live</span>
+                </div>
+                <p class="entry__org">Solo <em>· free on the App Store · idlespacemining.app</em></p>
+                <ul class="points">
+                    <li>
+                        Twelve production systems, branching upgrade paths the player commits to, and two layers of
+                        reset that trade everything owned for permanent bonuses. Keeps running while the app is closed.
+                    </li>
+                    <li>
+                        No ads, no energy timers and no countdown offers — nothing interrupts play to ask for money.
+                    </li>
+                </ul>
+            </div>
 
             <div class="entry">
                 <div class="entry__head">
@@ -124,68 +179,57 @@
                     Sole architect and engineer <em>· overview: github.com/isaacfrett/quant-public</em>
                 </p>
                 <p class="entry__note">
-                    End-to-end research and execution platform that discovered, validated and deployed systematic
-                    futures strategies under anti-overfitting controls, then ran them against a broker API with hard
-                    risk governance. Built so that most candidates fail.
+                    A machine-learning platform that researched futures trading strategies, tested them honestly, and
+                    ran the few that survived against a live broker account. The design starts from the assumption that
+                    most ideas are bad and makes them prove otherwise.
                 </p>
                 <ul class="points">
                     <li>
-                        <strong>Modeling.</strong> LightGBM over a <strong>700+ feature panel</strong> from 50+ modular
-                        builders, on liquid CME macro futures, intraday on the 15-minute bar with 1h/4h/daily context.
-                        Two-stage side/meta architecture — a side model predicts direction, a meta model decides whether
-                        to act — with probabilities isotonically calibrated before position sizing.
+                        Built roughly <strong>700 model inputs</strong> from 50+ reusable components, with an automated
+                        check that none could accidentally see the future — a bug that makes results look excellent and
+                        be worth nothing, so finding one blocked the release.
                     </li>
                     <li>
-                        <strong>Validation.</strong> Walk-forward CV with <strong>purge and embargo</strong>, plus
-                        combinatorial purged CV for distribution-level out-of-sample estimates. Triple-barrier and
-                        volatility-normalised labels, de-overlapped so no training label reads prices inside a test
-                        window.
+                        Strategies were scored only on data they had never seen, and the scoring corrected for how many
+                        thousands of ideas had been tried — the difference between real edge and luck.
                     </li>
                     <li>
-                        <strong>Gating.</strong> L1 signal gates then L2 economic gates — net-of-cost Sharpe,
-                        <strong>deflated Sharpe</strong>, and <strong>probability of backtest overfitting</strong>.
-                        Commissions and slippage netted before any statistic is computed, so the gates judged tradable
-                        edge rather than paper edge.
+                        Trading fees were subtracted before anything was scored, so the bar was "still profitable after
+                        costs" rather than "profitable on paper". Two models worked together: one predicted direction, a
+                        second decided whether that prediction was worth acting on.
                     </li>
                     <li>
-                        <strong>Integrity as a release gate.</strong> An automated lookahead auditor cross-checked every
-                        feature's first-valid index against the label horizon, and continuous backtest-to-live parity
-                        tests meant divergence stopped a change from shipping. Leakage was a release-blocking defect.
-                    </li>
-                    <li>
-                        <strong>Execution and operations.</strong> Bracketed order lifecycle with a risk governor —
-                        per-trade caps, exposure limits, drawdown halts, file-based kill switch — operated by a fleet of
-                        specialised agents across role-separated servers, surfaced through a real-time React/TypeScript
-                        dashboard over FastAPI.
+                        Simulation and live trading had to behave identically, checked continuously — any difference
+                        stopped a release. Hard limits on position size, daily loss and drawdown, plus a kill switch.
+                        Monitored through a real-time React dashboard over a FastAPI backend.
                     </li>
                 </ul>
                 <p class="stack">
-                    <b>Stack</b> Python 3.11 · LightGBM · scikit-learn · pandas · NumPy · Parquet/PyArrow · FastAPI ·
-                    React + TypeScript · systemd · pytest (TDD-first)
+                    <b>Stack</b> Python · LightGBM · scikit-learn · pandas · NumPy · Parquet/PyArrow · FastAPI · React
+                    + TypeScript · pytest (TDD-first)
                 </p>
             </div>
 
             <div class="entry">
                 <div class="entry__head">
-                    <h3 class="entry__title">Statlume — multi-sport analytics service</h3>
+                    <h3 class="entry__title">Statlume — sports statistics and prediction service</h3>
                     <span class="entry__leader"></span>
                     <span class="entry__when">2024</span>
                 </div>
                 <p class="entry__org">Solo <em>· github.com/isaacfrett/statlume-api</em></p>
                 <ul class="points">
                     <li>
-                        NBA, NFL and MLB statistics service over a <strong>MySQL/SQLAlchemy warehouse</strong> of player
-                        game logs, fed by third-party stats and sportsbook-odds APIs and run as a scheduled weekly job.
+                        Pulled NBA, NFL and MLB player game logs and betting lines from outside providers into a
+                        <strong>MySQL warehouse</strong>, refreshed weekly.
                     </li>
                     <li>
-                        <strong>NBA player-prop models</strong> for points and rebounds using TensorFlow/Keras and
-                        scikit-learn — RandomForest classifiers, standardised feature scaling, train/test splits — over
-                        rolling recent-form windows.
+                        Built models predicting individual player performance — points and rebounds — from recent-form
+                        data, and grouped NFL players into playing-style archetypes rather than ranking them on a single
+                        number.
                     </li>
                     <li>
-                        <strong>NFL player clustering</strong> with K-means over standardised performance features for
-                        archetype segmentation, plus automated Excel datasheet generation for matchup-mismatch and
-                        three-point analysis.
+                        Generated formatted Excel reports so the output was readable instead of a table dump. Each
+                        league used the same package shape, so adding one was known work.
                     </li>
                 </ul>
                 <p class="stack">
@@ -213,46 +257,46 @@
             <div class="skills">
                 <div class="skills__row">
                     <span class="skills__label">Languages</span>
-                    <span class="skills__items">Python · JavaScript · TypeScript · Java · SQL · C++ · GDScript · Bash</span>
+                    <span class="skills__items">Python · TypeScript · JavaScript · Java · SQL · C++ · GDScript · Bash</span>
                 </div>
                 <div class="skills__row">
                     <span class="skills__label">Backend</span>
-                    <span class="skills__items">FastAPI · Flask · Django · microservices · REST APIs · ETL pipelines</span>
+                    <span class="skills__items">
+                        FastAPI · Flask · Django · REST APIs · microservices · ETL pipelines · SQLAlchemy
+                    </span>
                 </div>
                 <div class="skills__row">
                     <span class="skills__label">Frontend</span>
-                    <span class="skills__items">React · TypeScript · Vite</span>
+                    <span class="skills__items">React · TypeScript · Vite · responsive layout · accessibility</span>
                 </div>
                 <div class="skills__row">
-                    <span class="skills__label">ML libraries</span>
+                    <span class="skills__label">Mobile</span>
                     <span class="skills__items">
-                        LightGBM · scikit-learn · TensorFlow/Keras · PyTorch · NumPy · SciPy · pandas · PyArrow/Parquet
+                        iOS · iPadOS · macOS · Godot · StoreKit / in-app purchases · App Store Connect
                     </span>
                 </div>
                 <div class="skills__row">
-                    <span class="skills__label">ML methods</span>
+                    <span class="skills__label">Machine learning</span>
                     <span class="skills__items">
-                        Walk-forward CV with purge/embargo · combinatorial purged CV · meta-labeling · triple-barrier
-                        labeling · isotonic calibration · deflated Sharpe · probability of backtest overfitting ·
-                        feature-leakage auditing · cost-aware model gating
+                        LightGBM · scikit-learn · TensorFlow/Keras · PyTorch · pandas · NumPy · SciPy · PyArrow/Parquet ·
+                        walk-forward cross-validation with purge/embargo · combinatorial purged CV · meta-labeling ·
+                        probability calibration · deflated Sharpe · probability of backtest overfitting ·
+                        feature-leakage auditing
                     </span>
                 </div>
                 <div class="skills__row">
-                    <span class="skills__label">Data &amp; cloud</span>
-                    <span class="skills__items">PostgreSQL · MySQL · AWS · Azure · GCP</span>
-                </div>
-                <div class="skills__row">
-                    <span class="skills__label">DevOps</span>
+                    <span class="skills__label">Data, cloud &amp; tools</span>
                     <span class="skills__items">
-                        Git · CI/CD (Jenkins) · Docker/Podman · Kubernetes · systemd · Grafana · Power BI · pytest
+                        PostgreSQL · MySQL · AWS · Azure · GCP · Git · CI/CD (Jenkins) · Docker · Kubernetes ·
+                        Grafana · Power BI · pytest
                     </span>
                 </div>
             </div>
         </section>
 
         <p class="colophon">
-            Full case studies, screenshots and source links at isaacfrett.com — every claim there links to the artefact
-            that settles it.
+            Full write-ups, screenshots and source links at isaacfrett.com — every claim there links to the thing that
+            settles it.
         </p>
     </body>
 </html>

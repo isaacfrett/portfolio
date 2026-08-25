@@ -47,7 +47,7 @@
 
 @page {
     size: letter;
-    margin: 11mm 13mm;
+    margin: 9.5mm 13mm;
 }
 
 * {
@@ -60,7 +60,7 @@ body {
     background: #fff;
     font-family: var(--sans);
     font-size: 9.3pt;
-    line-height: 1.38;
+    line-height: 1.35;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -86,7 +86,7 @@ ul {
 .head {
     border-bottom: 1.5pt solid var(--ink);
     padding-bottom: 7pt;
-    margin-bottom: 11pt;
+    margin-bottom: 9pt;
 }
 
 .head__name {
@@ -142,7 +142,7 @@ ul {
    -------------------------------------------------------------------------- */
 
 .section {
-    margin-bottom: 10pt;
+    margin-bottom: 8pt;
     break-inside: auto;
 }
 
@@ -166,7 +166,7 @@ ul {
    -------------------------------------------------------------------------- */
 
 .entry {
-    margin-bottom: 8.5pt;
+    margin-bottom: 7pt;
     break-inside: avoid;
 }
 
