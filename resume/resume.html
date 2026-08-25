@@ -9,7 +9,7 @@
     <body>
         <header class="head">
             <h1 class="head__name">Isaac Frett</h1>
-            <p class="head__role">Software Engineer · <strong>Remote only, US</strong> · US citizen</p>
+            <p class="head__role">Software Engineer</p>
             <p class="head__contact">
                 <span>isaacfrett2@gmail.com</span>
                 <span>563-349-0624</span>
@@ -23,11 +23,11 @@
             <h2 class="section__title">Summary</h2>
             <p class="summary">
                 Self-taught software engineer with 5+ years of experience, and usually the person who owns the whole
-                thing — the design, the code, the deploy, and whatever breaks afterwards. The Python services and data
-                pipelines behind executive reporting at a Fortune 50 retailer, a machine-learning trading platform built
-                to throw out its own bad ideas, and a one-person iOS studio with
-                <strong>three apps on the App Store</strong>. I would rather ship one thing that holds up when someone
-                checks it than three that look good until they do.
+                thing — the design, the code, the deploy, and whatever breaks afterwards. Python services and data
+                pipelines behind executive reporting at a Fortune 50 retailer, a machine-learning platform for futures
+                research and live execution, and a one-person iOS studio with
+                <strong>three apps on the App Store</strong>. Comfortable across the backend, the data layer, the front
+                end and the release process.
             </p>
         </section>
 
@@ -54,8 +54,8 @@
                         review.
                     </li>
                     <li>
-                        Every app ships with its own website, built as plain HTML with no analytics and no third-party
-                        requests, so the privacy policy is something a reader can check rather than take my word for.
+                        Build and deploy the marketing, privacy and support site for each app as hand-written static
+                        HTML and CSS on GitHub Pages, with copy mirrored from the app repository by a publish script.
                     </li>
                 </ul>
                 <p class="stack">
@@ -114,18 +114,17 @@
                     <span class="entry__leader"></span>
                     <span class="entry__when">2026 · live</span>
                 </div>
-                <p class="entry__org">Solo <em>· free on the App Store · starsplit.app</em></p>
+                <p class="entry__org">Solo <em>· App Store · starsplit.app</em></p>
                 <ul class="points">
                     <li>
-                        A match-3 game built around one real decision per level: a star appears, and you pick which of
-                        four shapes it breaks into. <strong>600 levels across six chapters</strong>, each chapter
-                        introducing a rule the game has not used before.
+                        A match-3 game shipped with <strong>600 hand-authored levels across six chapters</strong>, each
+                        chapter adding a board mechanic the engine did not previously support — obstacles, a spreading
+                        hazard, a seventh colour, timed levels and build-target goals.
                     </li>
                     <li>
-                        Difficulty is measured rather than guessed. A bot plays every level thousands of times before
-                        release and the move limit comes from what it finds, so a level that beats you is one you can
-                        learn instead of one you got unlucky on. Runs entirely on the device — no account, no internet
-                        required, no ads.
+                        Wrote a headless simulation harness that plays every level thousands of times and sets its move
+                        budget from the measured result, so all 600 are tuned from data rather than by hand. Boards are
+                        deterministic, so a given level is identical on every device.
                     </li>
                 </ul>
             </div>
@@ -136,16 +135,17 @@
                     <span class="entry__leader"></span>
                     <span class="entry__when">2026 · live</span>
                 </div>
-                <p class="entry__org">Solo <em>· free on the App Store · choicebible.com</em></p>
+                <p class="entry__org">Solo <em>· App Store · choicebible.com</em></p>
                 <ul class="points">
                     <li>
-                        <strong>Seven translations and the entire search index ship inside the app</strong>, so every
-                        feature works with no signal. Gives readers the typography controls a print designer expects —
-                        twelve typefaces, justification, hyphenation, spacing and margins.
+                        <strong>Seven translations and a prebuilt full-text search index ship inside the app</strong>,
+                        so search across all 66 books runs locally with no network. Custom text layout gives
+                        print-grade typography — twelve typefaces, justification, hyphenation, spacing and margins.
                     </li>
                     <li>
-                        Notes, highlights and reading position sync across iPhone, iPad and Mac through the reader's
-                        own iCloud account — no account to create, no server of mine, and nothing for me to see.
+                        Notes, highlights, bookmarks and reading position sync across iPhone, iPad and Mac through the
+                        user's own iCloud account, which removes the backend entirely — no service to operate, no
+                        accounts to manage and no user data held.
                     </li>
 
                 </ul>
@@ -157,14 +157,15 @@
                     <span class="entry__leader"></span>
                     <span class="entry__when">2026 · live</span>
                 </div>
-                <p class="entry__org">Solo <em>· free on the App Store · idlespacemining.app</em></p>
+                <p class="entry__org">Solo <em>· App Store · idlespacemining.app</em></p>
                 <ul class="points">
                     <li>
-                        Twelve production systems, branching upgrade paths the player commits to, and two layers of
-                        reset that trade everything owned for permanent bonuses. Keeps running while the app is closed.
+                        Twelve production tiers with branching upgrade paths and two nested prestige layers that trade
+                        progress for permanent multipliers.
                     </li>
                     <li>
-                        No ads, no energy timers and no countdown offers — nothing interrupts play to ask for money.
+                        Balanced an exponential economy — each tier doubles output every ten units owned — and credited
+                        production accrued while the app was closed from elapsed time on relaunch.
                     </li>
                 </ul>
             </div>
@@ -179,9 +180,9 @@
                     Sole architect and engineer <em>· overview: github.com/isaacfrett/quant-public</em>
                 </p>
                 <p class="entry__note">
-                    A machine-learning platform that researched futures trading strategies, tested them honestly, and
-                    ran the few that survived against a live broker account. The design starts from the assumption that
-                    most ideas are bad and makes them prove otherwise.
+                    A machine-learning platform that researched futures trading strategies, validated them, and ran the
+                    survivors against a live broker account — feature pipeline, model training, backtesting, execution
+                    and monitoring, all built solo.
                 </p>
                 <ul class="points">
                     <li>
@@ -200,13 +201,13 @@
                     </li>
                     <li>
                         Simulation and live trading had to behave identically, checked continuously — any difference
-                        stopped a release. Hard limits on position size, daily loss and drawdown, plus a kill switch.
-                        Monitored through a real-time React dashboard over a FastAPI backend.
+                        stopped a release. Hard limits on position size, daily loss and drawdown, plus a kill switch,
+                        monitored through a real-time React and FastAPI dashboard.
                     </li>
                 </ul>
                 <p class="stack">
-                    <b>Stack</b> Python · LightGBM · scikit-learn · pandas · NumPy · Parquet/PyArrow · FastAPI · React
-                    + TypeScript · pytest (TDD-first)
+                    <b>Stack</b> Python · LightGBM · scikit-learn · Parquet/PyArrow · FastAPI · React + TypeScript ·
+                    pytest (TDD-first)
                 </p>
             </div>
 
@@ -219,7 +220,7 @@
                 <p class="entry__org">Solo <em>· github.com/isaacfrett/statlume-api</em></p>
                 <ul class="points">
                     <li>
-                        Pulled NBA, NFL and MLB player game logs and betting lines from outside providers into a
+                        Pulled NBA, NFL and MLB game logs and betting lines from outside providers into a
                         <strong>MySQL warehouse</strong>, refreshed weekly.
                     </li>
                     <li>
@@ -228,8 +229,8 @@
                         number.
                     </li>
                     <li>
-                        Generated formatted Excel reports so the output was readable instead of a table dump. Each
-                        league used the same package shape, so adding one was known work.
+                        Generated formatted Excel reports instead of raw table dumps, with each league built to the
+                        same package shape.
                     </li>
                 </ul>
                 <p class="stack">
@@ -262,7 +263,7 @@
                 <div class="skills__row">
                     <span class="skills__label">Backend</span>
                     <span class="skills__items">
-                        FastAPI · Flask · Django · REST APIs · microservices · ETL pipelines · SQLAlchemy
+                        FastAPI · Flask · Django · REST APIs · microservices · ETL pipelines · SQLAlchemy · pytest
                     </span>
                 </div>
                 <div class="skills__row">
@@ -288,15 +289,14 @@
                     <span class="skills__label">Data, cloud &amp; tools</span>
                     <span class="skills__items">
                         PostgreSQL · MySQL · AWS · Azure · GCP · Git · CI/CD (Jenkins) · Docker · Kubernetes ·
-                        Grafana · Power BI · pytest
+                        Grafana · Power BI
                     </span>
                 </div>
             </div>
         </section>
 
         <p class="colophon">
-            Full write-ups, screenshots and source links at isaacfrett.com — every claim there links to the thing that
-            settles it.
+            Full write-ups, screenshots and source links at isaacfrett.com
         </p>
     </body>
 </html>

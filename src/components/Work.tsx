@@ -25,6 +25,9 @@ export function Work() {
     const reduced = useReducedMotion();
     const listRef = useRef<HTMLUListElement>(null);
     const positions = useRef(new Map<string, number>());
+    /* The rendered row order, so the effect below can tell a filter re-rank
+       from a row simply being opened. */
+    const lastOrder = useRef("");
 
     const visible = useMemo(() => {
         const rows = track === "all" ? projects : projects.filter((p) => p.tracks.includes(track));
@@ -33,6 +36,13 @@ export function Work() {
 
     /* FLIP: the filter's whole job is to re-rank, so the rows should be seen
        moving rather than snapping into a new order.
+
+       Only re-ranking animates. Opening a row also shifts every row beneath it,
+       but that movement is already the panel's own `grid-template-rows`
+       transition doing its job — sliding those rows as well put a second,
+       competing animation on top of it and read as the whole list lurching.
+       So an open/close still re-measures, to keep the baseline honest for the
+       next re-rank, and animates nothing.
 
        Positions are rebuilt from scratch each pass. A row that was filtered out
        and has just come back has no previous position in this map, so it fades
@@ -45,6 +55,10 @@ export function Work() {
         }
 
         const items = Array.from(list.querySelectorAll<HTMLElement>("[data-row]"));
+        const order = items.map((el) => el.dataset.row!).join(",");
+        const reRanked = order !== lastOrder.current;
+        lastOrder.current = order;
+
         const next = new Map<string, number>();
 
         items.forEach((el) => {
@@ -53,7 +67,7 @@ export function Work() {
             const after = el.getBoundingClientRect().top;
             const delta = before === undefined ? 0 : before - after;
 
-            if (Math.abs(delta) > 1) {
+            if (reRanked && Math.abs(delta) > 1) {
                 el.animate([{ transform: `translateY(${delta}px)` }, { transform: "translateY(0)" }], {
                     duration: 420,
                     easing: "cubic-bezier(0.16, 1, 0.3, 1)",

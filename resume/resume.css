@@ -240,9 +240,12 @@ ul {
     content: "";
     position: absolute;
     left: 0;
-    top: 5.6pt;
+    top: 5.4pt;
     width: 4.5pt;
-    height: 0.9pt;
+    /* 1.5pt is exactly 2px at 96dpi. At 0.9pt the bar landed between one and
+       two device pixels and rounded differently per line, so some bullets
+       rasterised visibly heavier than others. */
+    height: 1.5pt;
     background: var(--signal);
 }
 
@@ -297,8 +300,8 @@ ul {
    -------------------------------------------------------------------------- */
 
 .colophon {
-    margin-top: 11pt;
-    padding-top: 6pt;
+    margin-top: 7pt;
+    padding-top: 4pt;
     border-top: 0.75pt solid var(--rule);
     font-family: var(--mono);
     font-size: 7.6pt;
