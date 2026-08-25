@@ -26,8 +26,8 @@
                 thing — the design, the code, the deploy, and whatever breaks afterwards. Python services and data
                 pipelines behind executive reporting at a Fortune 50 retailer, a machine-learning platform for futures
                 research and live execution, and a one-person iOS studio with
-                <strong>three apps on the App Store</strong>. Comfortable across the backend, the data layer, the front
-                end and the release process.
+                <strong>three apps on the App Store</strong>. I work across the backend, the data layer, the front end
+                and the release process.
             </p>
         </section>
 
@@ -50,11 +50,10 @@
                     <li>
                         Wrote custom C++ extensions for the Godot game engine to reach iOS features it does not cover on
                         its own — push notifications, in-app purchases and ads — and set up the whole release process
-                        from scratch: signing certificates, provisioning profiles, automated builds and App Store
-                        review.
+                        from scratch: code signing, automated builds and App Store review.
                     </li>
                     <li>
-                        Build and deploy the marketing, privacy and support site for each app as hand-written static
+                        Build and deploy the marketing, privacy and support site for each app as plain static
                         HTML and CSS on GitHub Pages, with copy mirrored from the app repository by a publish script.
                     </li>
                 </ul>
@@ -117,14 +116,15 @@
                 <p class="entry__org">Solo <em>· App Store · starsplit.app</em></p>
                 <ul class="points">
                     <li>
-                        A match-3 game shipped with <strong>600 hand-authored levels across six chapters</strong>, each
+                        A match-3 game shipped with <strong>600 levels built by hand across six chapters</strong>, each
                         chapter adding a board mechanic the engine did not previously support — obstacles, a spreading
-                        hazard, a seventh colour, timed levels and build-target goals.
+                        hazard, a seventh colour, timed levels, and goals that ask players to build pieces rather
+                        than clear them.
                     </li>
                     <li>
                         Wrote a headless simulation harness that plays every level thousands of times and sets its move
                         budget from the measured result, so all 600 are tuned from data rather than by hand. Boards are
-                        deterministic, so a given level is identical on every device.
+                        fixed rather than random, so a given level is the same for every player.
                     </li>
                 </ul>
             </div>
@@ -140,7 +140,8 @@
                     <li>
                         <strong>Seven translations and a prebuilt full-text search index ship inside the app</strong>,
                         so search across all 66 books runs locally with no network. Custom text layout gives
-                        print-grade typography — twelve typefaces, justification, hyphenation, spacing and margins.
+                        the typography of a printed book — twelve typefaces, text set flush to both edges,
+                        automatic word breaks, spacing and margins.
                     </li>
                     <li>
                         Notes, highlights, bookmarks and reading position sync across iPhone, iPad and Mac through the
@@ -160,12 +161,12 @@
                 <p class="entry__org">Solo <em>· App Store · idlespacemining.app</em></p>
                 <ul class="points">
                     <li>
-                        Twelve production tiers with branching upgrade paths and two nested prestige layers that trade
-                        progress for permanent multipliers.
+                        Twelve production tiers with branching upgrade paths, and two nested prestige layers that trade
+                        progress for permanent gains.
                     </li>
                     <li>
-                        Balanced an exponential economy — each tier doubles output every ten units owned — and credited
-                        production accrued while the app was closed from elapsed time on relaunch.
+                        Balanced an economy where each tier doubles output every ten units owned, and credited the
+                        production earned while the app was closed from the time elapsed since it last ran.
                     </li>
                 </ul>
             </div>
@@ -200,9 +201,9 @@
                         second decided whether that prediction was worth acting on.
                     </li>
                     <li>
-                        Simulation and live trading had to behave identically, checked continuously — any difference
+                        Simulation and live trading had to behave the same way, checked continuously — any difference
                         stopped a release. Hard limits on position size, daily loss and drawdown, plus a kill switch,
-                        monitored through a real-time React and FastAPI dashboard.
+                        monitored on a real-time React dashboard.
                     </li>
                 </ul>
                 <p class="stack">
@@ -224,9 +225,9 @@
                         <strong>MySQL warehouse</strong>, refreshed weekly.
                     </li>
                     <li>
-                        Built models predicting individual player performance — points and rebounds — from recent-form
-                        data, and grouped NFL players into playing-style archetypes rather than ranking them on a single
-                        number.
+                        Built models predicting individual player performance — points and rebounds — from how
+                        players had been doing lately, and grouped NFL players by how they play rather than ranking
+                        them on a single number.
                     </li>
                     <li>
                         Generated formatted Excel reports instead of raw table dumps, with each league built to the
