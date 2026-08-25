@@ -20,7 +20,7 @@ export const projects: Project[] = [
         name: "Quantitative Futures Trading Platform",
         tagline: "An end-to-end research and execution engine built to reject its own bad ideas.",
         period: "Archived",
-        role: "Sole architect and engineer — research, execution, infrastructure, dashboard",
+        role: "Solo — research, execution, infrastructure, dashboard",
         status: "archived",
         tracks: ["ml", "fullstack", "frontend"],
         weight: 0,

@@ -14,9 +14,10 @@ export const profile = {
        third-party request because its privacy policy says it doesn't. */
     headline: "I build systems that try to prove themselves wrong.",
     lede:
-        "Self-taught software engineer, 5+ years writing code and usually the primary technical owner — backend and " +
-        "data platforms at enterprise scale, applied financial ML built to reject its own results, and a solo iOS " +
-        "studio with three apps on the App Store. Every claim on this page links to the thing that settles it.",
+        "Self-taught software engineer, 5+ years writing code and usually taking a project from design through " +
+        "deploy — backend and data platforms at enterprise scale, applied financial ML built to reject its own " +
+        "results, and a solo iOS studio with three apps on the App Store. Every claim on this page links to the " +
+        "thing that settles it.",
     location: "Daytona Beach, FL",
     github: "https://github.com/isaacfrett",
     githubHandle: "github.com/isaacfrett",
