@@ -7,7 +7,7 @@ import "./Contact.css";
 const CHANNELS = [
     { label: "GitHub", value: profile.githubHandle, href: profile.github },
     { label: "LinkedIn", value: profile.linkedinHandle, href: profile.linkedin },
-    { label: "Resume", value: "PDF, one page", href: profile.resume },
+    { label: "Resume", value: "PDF, two pages", href: profile.resume },
 ];
 
 export function Contact() {
