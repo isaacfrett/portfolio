@@ -23,7 +23,7 @@
             <h2 class="section__title">Summary</h2>
             <p class="summary">
                 Self-taught software engineer with 5+ years of experience, and usually the person who owns the whole
-                thing — the design, the code, the deploy, and whatever breaks afterwards. Python services and data
+                thing — the design, the code, the deploy, and the maintenance after it. Python services and data
                 pipelines behind executive reporting at a Fortune 50 retailer, a machine-learning platform for futures
                 research and live execution, and a one-person iOS studio with
                 <strong>three apps on the App Store</strong>. I work across the backend, the data layer, the front end
@@ -54,7 +54,8 @@
                     </li>
                     <li>
                         Build and deploy the marketing, privacy and support site for each app as plain static
-                        HTML and CSS on GitHub Pages, with copy mirrored from the app repository by a publish script.
+                        HTML and CSS on GitHub Pages, with the text mirrored from the app repository by a publish
+                        script.
                     </li>
                 </ul>
                 <p class="stack">
@@ -117,13 +118,13 @@
                 <ul class="points">
                     <li>
                         A match-3 game shipped with <strong>600 levels built by hand across six chapters</strong>, each
-                        chapter adding a board mechanic the engine did not previously support — obstacles, a spreading
+                        chapter adding a rule the game had not used before — obstacles, a spreading
                         hazard, a seventh colour, timed levels, and goals that ask players to build pieces rather
                         than clear them.
                     </li>
                     <li>
-                        Wrote a headless simulation harness that plays every level thousands of times and sets its move
-                        budget from the measured result, so all 600 are tuned from data rather than by hand. Boards are
+                        Wrote a bot that plays every level thousands of times before release and sets its move limit
+                        from the results, so all 600 are tuned from data rather than by hand. Boards are
                         fixed rather than random, so a given level is the same for every player.
                     </li>
                 </ul>
@@ -139,9 +140,9 @@
                 <ul class="points">
                     <li>
                         <strong>Seven translations and a prebuilt full-text search index ship inside the app</strong>,
-                        so search across all 66 books runs locally with no network. Custom text layout gives
-                        the typography of a printed book — twelve typefaces, text set flush to both edges,
-                        automatic word breaks, spacing and margins.
+                        so search across all 66 books runs locally with no network. Custom text layout makes the page
+                        look like a printed book — twelve fonts, text set flush to both edges, automatic word breaks,
+                        spacing and margins.
                     </li>
                     <li>
                         Notes, highlights, bookmarks and reading position sync across iPhone, iPad and Mac through the
@@ -161,12 +162,12 @@
                 <p class="entry__org">Solo <em>· App Store · idlespacemining.app</em></p>
                 <ul class="points">
                     <li>
-                        Twelve production tiers with branching upgrade paths, and two nested prestige layers that trade
-                        progress for permanent gains.
+                        Twelve generators with branching upgrade paths, and two levels of reset that trade everything
+                        owned for permanent gains.
                     </li>
                     <li>
-                        Balanced an economy where each tier doubles output every ten units owned, and credited the
-                        production earned while the app was closed from the time elapsed since it last ran.
+                        Balanced an economy where every tenth generator owned doubles its output, and credited what was
+                        mined while the app was closed from the time since it last ran.
                     </li>
                 </ul>
             </div>
@@ -182,8 +183,8 @@
                 </p>
                 <p class="entry__note">
                     A machine-learning platform that researched futures trading strategies, validated them, and ran the
-                    survivors against a live broker account — feature pipeline, model training, backtesting, execution
-                    and monitoring, all built solo.
+                    survivors against a live broker account — the model inputs, the training, testing against past data,
+                    execution and monitoring, all built solo.
                 </p>
                 <ul class="points">
                     <li>
@@ -193,7 +194,7 @@
                     </li>
                     <li>
                         Strategies were scored only on data they had never seen, and the scoring corrected for how many
-                        thousands of ideas had been tried — the difference between real edge and luck.
+                        thousands of ideas had been tried — the difference between a real advantage and luck.
                     </li>
                     <li>
                         Trading fees were subtracted before anything was scored, so the bar was "still profitable after
@@ -202,8 +203,8 @@
                     </li>
                     <li>
                         Simulation and live trading had to behave the same way, checked continuously — any difference
-                        stopped a release. Hard limits on position size, daily loss and drawdown, plus a kill switch,
-                        monitored on a real-time React dashboard.
+                        stopped a release. Hard limits on how much could be risked per trade, lost in a day and lost
+                        overall, plus a kill switch, monitored on a real-time React dashboard.
                     </li>
                 </ul>
                 <p class="stack">
@@ -221,7 +222,7 @@
                 <p class="entry__org">Solo <em>· github.com/isaacfrett/statlume-api</em></p>
                 <ul class="points">
                     <li>
-                        Pulled NBA, NFL and MLB game logs and betting lines from outside providers into a
+                        Pulled NBA, NFL and MLB game logs and betting odds from outside providers into a
                         <strong>MySQL warehouse</strong>, refreshed weekly.
                     </li>
                     <li>
@@ -230,8 +231,8 @@
                         them on a single number.
                     </li>
                     <li>
-                        Generated formatted Excel reports instead of raw table dumps, with each league built to the
-                        same package shape.
+                        Generated formatted Excel reports instead of raw tables, with every league built to the same
+                        structure.
                     </li>
                 </ul>
                 <p class="stack">
@@ -280,7 +281,8 @@
                 <div class="skills__row">
                     <span class="skills__label">Machine learning</span>
                     <span class="skills__items">
-                        LightGBM · scikit-learn · TensorFlow/Keras · PyTorch · pandas · NumPy · SciPy · PyArrow/Parquet ·
+                        LightGBM · scikit-learn · TensorFlow/Keras · PyTorch · pandas · NumPy · SciPy · PyArrow/Parquet
+                        ·
                         walk-forward cross-validation with purge/embargo · combinatorial purged CV · meta-labeling ·
                         probability calibration · deflated Sharpe · probability of backtest overfitting ·
                         feature-leakage auditing
